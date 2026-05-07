@@ -5,7 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sosnowe Chwile Pellet | Pellet z dostawą</title>
   <meta name="description" content="Sprzedaż pelletu drzewnego premium z dostawą w całej Polsce. Cennik, kalendarz dostępności, szybki kontakt, płatność PayPal i kartą." />
-  <style>
+  <style>.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:18px;
+  margin-top:24px;
+}
+
+.pricing-card{
+  background:#fff;
+  border:1px solid #d9e1d8;
+  border-radius:18px;
+  padding:24px;
+  box-shadow:0 8px 26px rgba(20,30,25,.05);
+}
+
+.pricing-card h3{
+  margin:0 0 10px;
+  font-size:24px;
+  line-height:1.2;
+}
+
+.pricing-card .price{
+  font-size:28px;
+  font-weight:800;
+  color:#23472c;
+  margin:8px 0 12px;
+}
+
+.pricing-card p{
+  margin:0 0 10px;
+}
+
+.offer-box{
+  margin-top:24px;
+}
+
+.offer-box .card p{
+  margin:0 0 10px;
+}
+
+@media (max-width: 900px){
+  .pricing-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .pricing-card{
+    padding:18px;
+    border-radius:16px;
+  }
+
+  .pricing-card h3{
+    font-size:22px;
+  }
+
+  .pricing-card .price{
+    font-size:24px;
+  }
+}
+
+@media (max-width: 480px){
+  .pricing-card{
+    padding:16px;
+    border-radius:14px;
+  }
+
+  .pricing-card h3{
+    font-size:20px;
+  }
+
+  .pricing-card .price{
+    font-size:22px;
+  }
+}
     .offer-gallery{
   max-width:960px;
   margin:0 auto;
@@ -364,22 +437,22 @@
       Oferujemy pellet drzewny do domu, firmy i większych zamówień. Pomagamy dobrać odpowiednią ilość opału oraz ustalić wygodny termin dostawy.
     </p>
 
-    <div class="grid-3">
-      <div class="card">
+    <div class="pricing-grid">
+      <div class="pricing-card">
         <h3>Pellet STANDARD A1</h3>
         <div class="price">1 790 zł / tona</div>
         <p class="muted">Dobry wybór do codziennego ogrzewania domu. Sprzedaż w workach 15 kg, na palecie około 1 tony.</p>
         <p><strong>Dla kogo:</strong> klient indywidualny, dom jednorodzinny, sezonowy zapas opału.</p>
       </div>
 
-      <div class="card">
+      <div class="pricing-card">
         <h3>Pellet PREMIUM A1</h3>
         <div class="price">1 990 zł / tona</div>
         <p class="muted">Wyższa jakość spalania, mniej popiołu i stabilne parametry. Polecany do nowoczesnych kotłów.</p>
         <p><strong>Dla kogo:</strong> klienci oczekujący wyższej jakości i czystszej pracy kotła.</p>
       </div>
 
-      <div class="card">
+      <div class="pricing-card">
         <h3>Pellet HURT</h3>
         <div class="price">od 1 690 zł / tona</div>
         <p class="muted">Oferta dla firm, wspólnot i większych odbiorców. Wycena indywidualna od 5 ton.</p>
@@ -387,7 +460,7 @@
       </div>
     </div>
 
-    <div style="margin-top:24px;">
+    <div class="offer-box">
       <div class="card">
         <h3>Propozycja dla klienta</h3>
         <p><strong>Dla domu jednorodzinnego:</strong> polecamy 2 tony pelletu STANDARD A1 jako korzystny wybór cenowy.</p>
@@ -397,7 +470,7 @@
       </div>
     </div>
   </div>
-</section>
+    </section>
      <!-- DLACZEGO + PŁATNOŚĆ -->
     <section class="section">
       <div class="container grid-2">
