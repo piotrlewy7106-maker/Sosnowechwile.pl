@@ -217,6 +217,37 @@
       .calendar{grid-template-columns:repeat(3,1fr);}
     }
   </style>
+  .offer-image{
+  width:100%;
+  aspect-ratio:4 / 3;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  border-radius:14px;
+  margin-bottom:14px;
+}
+
+.offer-note{
+  margin-top:24px;
+}
+
+.offer-note .card p{
+  margin:0 0 10px;
+}
+
+@media (max-width: 768px){
+  .offer-image{
+    aspect-ratio:16 / 10;
+    border-radius:12px;
+  }
+}
+
+@media (max-width: 480px){
+  .offer-image{
+    aspect-ratio:16 / 11;
+    border-radius:10px;
+  }
+}
 </head>
 <body>
 
