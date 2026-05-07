@@ -68,19 +68,33 @@
       margin:0 auto;
     }
     .hero{
-      position:relative;
-      min-height:88vh;
-      display:flex;
-      align-items:center;
-      color:#fff;
-      background:
-        linear-gradient(rgba(18,33,20,.58),rgba(18,33,20,.58)),
-        url('1000042143.jpg') center/cover no-repeat;
-    }
-    .hero-inner{
-      padding:72px 0;
-      max-width:760px;
-    }
+    position:relative;
+  min-height:88vh;
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+  color:#fff;
+  background:
+    linear-gradient(rgba(18,33,20,.58),rgba(18,33,20,.58)),
+    url('1000042143.jpg') center/cover no-repeat;
+}
+
+.hero-inner{
+  padding:48px 0 40px;
+  max-width:760px;
+}
+
+@media (max-width: 768px){
+  .hero{
+    min-height:auto;
+    min-height:100svh;
+    align-items:flex-start;
+  }
+
+  .hero-inner{
+    padding:18px 0 28px;
+  }
+}
     .badge{
       display:inline-block;
       background:rgba(255,255,255,.16);
