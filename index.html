@@ -5,49 +5,298 @@
   <title>Pellet drzewny A1 z dostawą – sezon 2025/2026 | Sosnowe Chwile</title>
   <meta name="description" content="Pellet drzewny A1 z dostawą pod dom w woj. mazowieckim i pomorskim. Ceny od 1 790 zł/t, szybka dostawa, zamówienia przez WhatsApp lub formularz.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-  <header>
-    <h1>Pellet drzewny z dostawą pod dom – od 1 790 zł/t</h1>
-    <p>Pellet premium A1 na sezon 2025/2026. Zamów online w kilka minut – dostawa do domów, firm i wspólnot.</p>
-    <a href="#zamow">Zamów pellet z dostawą</a>
-    <a href="#oferta">Sprawdź aktualny cennik</a>
-  </header>
+  <style>
+    :root {
+      --primary: #177245;
+      --primary-dark: #0f4d2f;
+      --accent: #f97316;
+      --bg: #f5f5f5;
+      --text: #111827;
+      --muted: #6b7280;
+      --radius: 10px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #ffffff;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--primary-dark); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-  <main>
-    <section id="oferta-woj">
-      <h2>Pellet z dostawą w Twoim województwie</h2>
-      <a href="/pomorskie">Woj. pomorskie</a>
-      <a href="/mazowieckie">Woj. mazowieckie</a>
-    </section>
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
 
-    <section id="oferta">
-      <h2>Ceny pelletu drzewnego – sezon 2025/2026</h2>
+    header {
+      border-bottom: 1px solid #e5e7eb;
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .logo-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #facc15, #16a34a);
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      font-size: .95rem;
+    }
 
-      <article>
-        <h3>STANDARD A1 – 1 790 zł / tona</h3>
-        <p>Sprawdzony pellet do codziennego ogrzewania domu – stabilne spalanie, jasny kolor i niska wilgotność.</p>
-        <a href="https://wa.me/48793573900?text=Dzień%20dobry,%20interesuje%20mnie%20Pellet%20STANDARD%20A1">Zapytaj o cenę i termin dostawy</a>
-      </article>
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: .7rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: .95rem;
+      border: none;
+      cursor: pointer;
+      gap: .4rem;
+      text-decoration: none;
+      transition: transform .1s ease, box-shadow .1s ease, background .15s ease;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: linear-gradient(to right, var(--primary), var(--primary-dark));
+      color: #fff;
+      box-shadow: 0 10px 20px rgba(15, 118, 110, 0.25);
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 24px rgba(15, 118, 110, 0.3);
+      text-decoration: none;
+    }
+    .btn-outline {
+      background: #ffffff;
+      color: var(--primary-dark);
+      border: 1px solid #d1d5db;
+    }
+    .btn-outline:hover {
+      background: #f9fafb;
+      text-decoration: none;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .25rem .7rem;
+      border-radius: 999px;
+      font-size: .75rem;
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fed7aa;
+      margin-bottom: .8rem;
+    }
 
-      <article>
-        <h3>PREMIUM A1 – 1 990 zł / tona</h3>
-        <p>Pellet PREMIUM A1 dla wymagających – minimalna ilość popiołu i wysoka kaloryczność. Idealny do nowoczesnych kotłów.</p>
-        <a href="https://wa.me/48793573900?text=Dzień%20dobry,%20interesuje%20mnie%20Pellet%20PREMIUM%20A1">Zapytaj o cenę i termin dostawy</a>
-      </article>
+    main { background: #ffffff; }
 
-      <article>
-        <h3>HURT – od 1 690 zł / tona</h3>
-        <p>Oferta dla firm i wspólnot – zamówienia od 5 ton, indywidualna wycena i harmonogram dostaw na cały sezon.</p>
-        <a href="https://wa.me/48793573900?text=Dzień%20dobry,%20interesuje%20mnie%20oferta%20HURTOWA">Zapytaj o wycenę hurtową</a>
-      </article>
-    </section>
+    .hero {
+      padding: 2rem 0 1rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: clamp(2.1rem, 3vw, 2.7rem);
+      line-height: 1.1;
+      margin-bottom: .9rem;
+    }
+    .hero-sub {
+      font-size: 1.02rem;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+      max-width: 32rem;
+    }
+    .hero-price {
+      font-size: .95rem;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .hero-price strong {
+      font-size: 1.05rem;
+      color: #b91c1c;
+    }
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-bottom: 1.1rem;
+    }
+    .hero-meta {
+      font-size: .8rem;
+      color: var(--muted);
+    }
 
-    <!-- FAQ, formularz itd. -->
-  </main>
+    .hero-card {
+      background: radial-gradient(circle at 10% 0%, #dcfce7 0, #f1f5f9 45%, #ffffff 100%);
+      border-radius: 20px;
+      padding: 1.5rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 25px 45px rgba(15, 23, 42, 0.08);
+    }
+    .hero-card h2 {
+      font-size: 1.1rem;
+      margin-bottom: .4rem;
+    }
+    .hero-card p {
+      font-size: .9rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .hero-list {
+      list-style: none;
+      font-size: .9rem;
+      color: #374151;
+      margin-bottom: .9rem;
+    }
+    .hero-list li {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      margin-bottom: .35rem;
+    }
+    .hero-list span.icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: #bbf7d0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .75rem;
+      color: #166534;
+    }
 
-  <footer>
-    <p>© 2025 Sosnowe Chwile Pellet. Wszelkie prawa zastrzeżone.</p>
-  </footer>
-</body>
-</html>
+    .section {
+      padding: 1.8rem 0;
+    }
+    .section h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+    }
+    .section-intro {
+      font-size: .95rem;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+      max-width: 38rem;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .benefit {
+      padding: 1rem;
+      border-radius: var(--radius);
+      background: var(--bg);
+      border: 1px solid #e5e7eb;
+      font-size: .9rem;
+    }
+    .benefit-title {
+      font-weight: 600;
+      margin-bottom: .3rem;
+    }
+
+    .region-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: .5rem;
+    }
+    .region-card {
+      flex: 1 1 220px;
+      padding: 1rem;
+      border-radius: var(--radius);
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      font-size: .9rem;
+    }
+    .region-card h3 {
+      font-size: 1rem;
+      margin-bottom: .4rem;
+    }
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+    .offer-card {
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+    .offer-card.featured {
+      border-color: #22c55e;
+      background: #ecfdf5;
+      box-shadow: 0 18px 30px rgba(22, 163, 74, 0.2);
+    }
+    .offer-label {
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: #6b7280;
+    }
+    .offer-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+    .offer-price {
+      font-size: 1rem;
+      color: #111827;
+    }
+    .offer-meta {
+      font-size: .85rem;
+      color: var(--muted);
+    }
+    .offer-list {
+      font-size: .85rem;
+      color: #374151;
+      margin: .4rem 0 .7rem;
+      padding-left: 1rem;
+    }
+    .offer-list li { margin-bottom: .2rem; }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    details {
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      padding: .7rem .9rem;
+      background: #f9fafb;
+      font-size: 
