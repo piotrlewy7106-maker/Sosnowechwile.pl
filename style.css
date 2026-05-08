@@ -292,3 +292,70 @@ footer nav a:hover {
     padding: 20px 16px;
   }
 }
+/* Baner promocyjny */
+.banner-promo {
+  width: 100%;
+  background: linear-gradient(90deg, #1a3a1a 0%, #2d5a2d 50%, #1a3a1a 100%);
+  border-top: 3px solid #f5c842;
+  border-bottom: 3px solid #f5c842;
+}
+
+.banner-link {
+  display: block;
+  text-decoration: none;
+  padding: 18px 20px;
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 900px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.banner-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.banner-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 4px;
+}
+
+.banner-text strong {
+  color: #f5c842;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.banner-text span {
+  color: #d4e8d4;
+  font-size: 0.95rem;
+}
+
+.banner-text em {
+  color: #f5c842;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.banner-cta {
+  background: #f5c842;
+  color: #1a3a1a;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.banner-link:hover .banner-cta {
+  background: #ffd700;
+}
