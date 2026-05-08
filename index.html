@@ -89,7 +89,7 @@
       background:#25D366;
       color:#fff;
       border:none;
-      margin-top:10px;
+      margin-top:15px;
       width:100%
     }
     .btn-whatsapp:hover{background:#1ebe5b}
@@ -105,7 +105,7 @@
       margin:0 0 30px;
       font-size:18px
     }
-    
+
     /* ===== REGION BUTTONS ===== */
     .region-section{background:#edf1eb; border-bottom: 1px solid var(--border);}
     .region-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:14px;margin-top:20px}
@@ -145,10 +145,12 @@
     }
     .muted{color:var(--muted); flex-grow:1; margin-bottom:15px}
 
-    /* ===== FAQ ===== */
+    /* ===== FAQ STYLE ===== */
     .faq-section{padding:60px 0; background:#f9faf7;}
-    .faq-item{border-radius:14px;background:#fff;border:1px solid var(--border);margin-bottom:10px;overflow:hidden;}
-    .faq-question{width:100%;text-align:left;padding:16px 20px;background:transparent;border:none;font-size:16px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+    .faq-section h2{text-align:center;margin-bottom:8px;}
+    .faq-section .lead{text-align:center;margin-bottom:32px;}
+    .faq-item{border-radius:14px;background:#fff;border:1px solid var(--border);margin-bottom:10px;overflow:hidden;box-shadow:0 4px 16px rgba(20,30,25,.04);}
+    .faq-question{width:100%;text-align:left;padding:16px 20px;background:transparent;border:none;font-size:16px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--text);}
     .faq-icon{font-size:20px;color:var(--accent);transition:transform .25s;}
     .faq-answer{max-height:0;overflow:hidden;padding:0 20px;transition:max-height .25s ease,padding .25s ease;background:#fafbf8;}
     .faq-item.open .faq-answer{max-height:400px;padding:12px 20px 20px;border-top:1px solid #edf1eb;}
@@ -159,8 +161,27 @@
     input,textarea{width:100%;padding:14px 16px;border:1px solid #cfd8d2;border-radius:12px;font:inherit;}
     .footer{padding:40px 0;text-align:center;color:var(--muted);border-top:1px solid var(--border);background:#fff}
 
+    /* ===== MOBILE GALLERY (SLIDER) ===== */
     @media (max-width:900px){
-      .pricing-grid{grid-template-columns:1fr;gap:14px}
+      .pricing-grid{
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 20px 0;
+        gap: 16px;
+        -webkit-overflow-scrolling: touch;
+        margin-left: -16px;
+        margin-right: -16px;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+      .pricing-card{
+        min-width: 280px;
+        flex: 0 0 280px;
+        scroll-snap-align: center;
+      }
+      .pricing-grid::-webkit-scrollbar { display: none; }
+      .pricing-grid { -ms-overflow-style: none; scrollbar-width: none; }
     }
     @media (max-width:520px){
       .hero-actions{flex-direction:column}
@@ -194,7 +215,7 @@
         "name": "Jakie formy płatności są dostępne?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Możesz zapłacić online przez PayPal, kartą lub przelewem."
+          "text": "Za pellet możesz zapłacić online przez PayPal, kartą lub przelewem."
         }
       }
     ]
@@ -216,7 +237,6 @@
   </header>
 
   <main>
-    <!-- Sekcja Regionów -->
     <section class="section region-section">
       <div class="container">
         <h2>Dostawa w Twoim regionie</h2>
@@ -228,34 +248,36 @@
       </div>
     </section>
 
-    <!-- Sekcja Oferty -->
     <section class="section" id="oferta">
       <div class="container">
         <h2>Cennik i oferta</h2>
+        <p class="lead">Przesuń w bok na telefonie, aby zobaczyć wszystkie opcje:</p>
         <div class="pricing-grid">
           <div class="pricing-card">
+            <div style="font-size:40px; margin-bottom:10px;">🪵</div>
             <h3>STANDARD A1</h3>
             <div class="price">1 790 zł / tona</div>
-            <p class="muted">Dobry wybór do codziennego ogrzewania domu.</p>
+            <p class="muted">Dobry wybór do codziennego ogrzewania domu. Jasny kolor i niska wilgotność.</p>
             <a class="btn btn-whatsapp" href="https://wa.me/48793573900?text=Dzień%20dobry,%20interesuje%20mnie%20Pellet%20STANDARD%20A1" target="_blank">Zapytaj na WhatsApp</a>
           </div>
           <div class="pricing-card">
+            <div style="font-size:40px; margin-bottom:10px;">🔥</div>
             <h3>PREMIUM A1</h3>
             <div class="price">1 990 zł / tona</div>
-            <p class="muted">Wyższa jakość spalania, mniej popiołu i stabilne parametry.</p>
+            <p class="muted">Wyższa jakość spalania, certyfikowany, śladowa ilość popiołu.</p>
             <a class="btn btn-whatsapp" href="https://wa.me/48793573900?text=Dzień%20dobry,%20interesuje%20mnie%20Pellet%20PREMIUM%20A1" target="_blank">Zapytaj na WhatsApp</a>
           </div>
           <div class="pricing-card">
+            <div style="font-size:40px; margin-bottom:10px;">🏗️</div>
             <h3>HURT</h3>
             <div class="price">od 1 690 zł / tona</div>
-            <p class="muted">Oferta dla firm, wspólnot mieszkaniowych i od 5 ton.</p>
+            <p class="muted">Specjalna oferta dla firm, wspólnot mieszkaniowych i zamówień od 5 ton.</p>
             <a class="btn btn-whatsapp" href="https://wa.me/48793573900?text=Dzień%20dobry,%20interesuje%20mnie%20oferta%20HURTOWA" target="_blank">Zapytaj na WhatsApp</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
     <section class="faq-section" id="faq">
       <div class="container">
         <h2>FAQ – najczęstsze pytania</h2>
@@ -269,44 +291,4 @@
         </div>
         <div class="faq-item">
           <button class="faq-question">Jakie formy płatności są dostępne? <span class="faq-icon">+</span></button>
-          <div class="faq-answer"><p>Za pellet możesz zapłacić online (PayPal/karta) lub przelewem.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Formularz -->
-    <section class="section" id="zamow">
-      <div class="container">
-        <h2>Zamówienie / zapytanie</h2>
-        <div class="form-wrap">
-          <form name="zamowienie-pelletu" method="POST" data-netlify="true" action="/dziekujemy.html">
-            <input type="hidden" name="form-name" value="zamowienie-pelletu" />
-            <input type="text" name="imie" placeholder="Imię i nazwisko" required />
-            <input type="email" name="email" placeholder="E-mail" required />
-            <input type="tel" name="telefon" placeholder="Telefon" required />
-            <input type="text" name="ilosc" placeholder="Ilość (np. 1 paleta / 2 tony)" required />
-            <textarea name="wiadomosc" placeholder="Dodatkowe uwagi"></textarea>
-            <button class="btn btn-primary" type="submit">Wyślij zapytanie</button>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <strong>Sosnowe Chwile Pellet</strong><br>
-      <small>© 2026. Kontakt: +48 793 573 900</small>
-    </div>
-  </footer>
-
-  <script>
-    document.querySelectorAll('.faq-item').forEach(item => {
-      item.querySelector('.faq-question').addEventListener('click', () => {
-        document.querySelectorAll('.faq-item').forEach(i => { if(i!==item) i.classList.remove('open'); });
-        item.classList.toggle('open');
-      });
-    });
-  </script>
-</body>
-</html>
+          <div class="faq-answer"><p>Za pellet możesz zapłacić online (PayPal/karta)
