@@ -18,12 +18,13 @@
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Arial,Helvetica,sans-serif;
-      color:var(--text);
-      background:var(--bg);
-      line-height:1.6
+    body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #d4ead4;
+  background: #0e2a0e;
+  line-height: 1.6;
+    }
     }
     .container{
       width:min(1120px,calc(100% - 32px));
@@ -83,9 +84,15 @@
     }
 
     .hero-mazowieckie {
-      background: linear-gradient(135deg, var(--green-dark), var(--green));
-      color: #fff;
-      padding: 64px 0 56px;
+  background-image:
+    linear-gradient(rgba(10, 30, 10, 0.78), rgba(10, 30, 10, 0.88)),
+    url('https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=1200&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 64px 0 56px;
+}
     }
 
     .hero-mazowieckie .hero-kicker {
@@ -118,17 +125,9 @@
       opacity: 0.95;
     }
 
-    .section {
-      padding: 48px 0;
-    }
-
-    .section-alt {
-      background: #edf0e7;
-    }
-
-    .section h2 {
-      font-size: 22px;
-      margin: 0 0 16px;
+.section { background: #0f200f; }
+.section-alt { background: #122a12; }
+.section h2 { color: #f5c842; }
     }
 
     .list-two-cols {
