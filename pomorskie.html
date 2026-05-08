@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pl"> 
+<html lang="pl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pellet drzewny Pomorskie – dostawy hurtowe od 5 ton | Sosnowe Chwile</title>
-  <meta name="description" content="Pellet drzewny z dostawą hurtową w województwie pomorskim. Obsługujemy firmy, wspólnoty i obiekty usługowe. Zamówienia od 5 ton, indywidualna wycena." />
+  <meta name="description" content="Pellet drzewny z dostawą hurtową w województwie pomorskim. Obsługujemy firmy, wspólnoty i obiekty usługowe w Gdańsku, Gdyni, Sopocie i całym Pomorzu. Zamówienia od 5 ton." />
   <style>
     :root{
       --green:#2f5d3a;
@@ -25,9 +25,11 @@
       background:var(--bg);
       line-height:1.6
     }
-    .container{width:min(1120px,calc(100% - 32px));margin:0 auto}
+    .container{
+      width:min(1120px,calc(100% - 32px));
+      margin:0 auto
+    }
 
-    /* NAV */
     .topnav{
       background:var(--green-dark);
       padding:14px 0;
@@ -49,7 +51,11 @@
       border-radius:8px;
       display:block
     }
-    .topnav nav{display:flex;gap:16px;flex-wrap:wrap}
+    .topnav nav{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap
+    }
     .topnav nav a{
       color:#c8e6c9;
       text-decoration:none;
@@ -57,7 +63,9 @@
       font-weight:700;
       transition:.2s
     }
-    .topnav nav a:hover{color:#fff}
+    .topnav nav a:hover{
+      color:#fff
+    }
     .topnav .btn-phone{
       background:var(--accent);
       color:#fff;
@@ -69,324 +77,174 @@
       white-space:nowrap
     }
 
-    /* HERO */
     .hero{
-      background:linear-gradient(rgba(18,33,20,.60),rgba(18,33,20,.60)),
-                 url('1000042143.jpg') center/cover no-repeat;
       color:#fff;
       padding:72px 0 60px
     }
-    .hero h1{
-      font-size:clamp(30px,5vw,56px);
-      line-height:1.05;
-      margin:0 0 16px;
-      letter-spacing:-.02em;
-      text-shadow:0 2px 14px rgba(0,0,0,.35)
-    }
-    .hero p{
-      font-size:clamp(16px,2vw,20px);
-      max-width:680px;
-      color:rgba(255,255,255,.92);
-      margin:0 0 28px;
-      text-shadow:0 2px 10px rgba(0,0,0,.25)
-    }
-    .badge{
-      display:inline-block;
-      background:rgba(255,255,255,.16);
-      border:1px solid rgba(255,255,255,.25);
-      padding:8px 14px;
-      border-radius:999px;
-      font-size:14px;
-      margin-bottom:18px;
-      backdrop-filter:blur(6px)
-    }
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
 
-    /* BUTTONS */
-    .btn{
-      display:inline-block;
-      text-decoration:none;
-      border:none;
-      cursor:pointer;
-      padding:14px 22px;
-      border-radius:12px;
-      font-weight:700;
-      font-size:15px;
-      transition:.2s ease
-    }
-    .btn-primary{background:var(--accent);color:#fff}
-    .btn-primary:hover{background:#c97a25}
-    .btn-whatsapp{background:#25D366;color:#fff}
-    .btn-whatsapp:hover{background:#1ebe5b}
-
-    /* SEKCJE */
-    .section{padding:64px 0}
-    .section h2{
-      font-size:clamp(24px,3vw,38px);
-      margin:0 0 12px;
-      color:var(--green-dark);
-      line-height:1.1
-    }
-    .section .lead{
-      color:var(--muted);
-      max-width:760px;
-      margin:0 0 28px;
-      font-size:17px
+    .hero-pomorskie {
+      background: linear-gradient(135deg, #12324f, #1c5f7a);
+      color: #fff;
+      padding: 64px 0 56px;
     }
 
-    /* KARTY */
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:18px;
-      padding:24px;
-      box-shadow:0 8px 26px rgba(20,30,25,.05)
-    }
-    .card h3{
-      margin:0 0 10px;
-      font-size:20px;
-      color:var(--green-dark)
-    }
-    .price{
-      font-size:28px;
-      font-weight:800;
-      color:var(--green-dark);
-      margin:8px 0 12px
-    }
-    .muted{color:var(--muted)}
-
-    /* GRID */
-    .grid-3{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:18px;
-      margin-top:24px
-    }
-    .grid-2{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:18px;
-      margin-top:24px
+    .hero-pomorskie .hero-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 13px;
+      margin-bottom: 8px;
+      opacity: 0.9;
     }
 
-    /* LISTA */
-    ul.clean{padding-left:18px;margin:12px 0 0}
-    ul.clean li{margin:8px 0}
-    ol.steps{padding-left:20px;margin:12px 0 0}
-    ol.steps li{margin:10px 0;font-size:16px}
+    .hero-pomorskie h1 {
+      font-size: clamp(26px, 4vw, 34px);
+      margin: 0 0 12px;
+    }
 
-    /* KONTAKT BOX */
-    .contact-box{
-      background:var(--green-dark);
-      color:#fff;
-      border-radius:18px;
-      padding:36px;
-      margin-top:24px
+    .hero-pomorskie .hero-subtitle {
+      max-width: 620px;
+      margin: 0 0 20px;
     }
-    .contact-box h2{color:#fff;margin:0 0 12px}
-    .contact-box p{color:rgba(255,255,255,.88);margin:0 0 10px}
-    .contact-box a{color:#c8e6c9}
-    .contact-box a:hover{color:#fff}
 
-    /* FOOTER */
-    .footer{
-      padding:28px 0 44px;
-      color:var(--muted);
-      border-top:1px solid var(--border);
-      background:#fff
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      align-items: center;
     }
-    .footer nav{
-      display:flex;
-      gap:20px;
-      flex-wrap:wrap;
-      margin-top:8px
-    }
-    .footer nav a{
-      color:var(--green);
-      text-decoration:none;
-      font-size:14px;
-      font-weight:700
-    }
-    .footer nav a:hover{text-decoration:underline}
-    .footer small{display:block;margin-top:8px}
 
-    /* RESPONSIVE */
-    @media(max-width:900px){
-      .grid-3{grid-template-columns:1fr}
-      .grid-2{grid-template-columns:1fr}
+    .hero-info {
+      font-size: 14px;
+      opacity: 0.95;
     }
-    @media(max-width:600px){
-      .hero-actions{flex-direction:column}
-      .btn{width:100%;text-align:center}
-      .contact-box{padding:24px}
-      .topnav nav{display:none}
+
+    .section {
+      padding: 48px 0;
+    }
+
+    .section-alt {
+      background: #edf0e7;
+    }
+
+    .section h2 {
+      font-size: 22px;
+      margin: 0 0 16px;
+    }
+
+    .list-two-cols {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 6px 24px;
+    }
+
+    .list-two-cols li::before {
+      content: "• ";
+      color: var(--green);
+    }
+
+    .list-check {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 0;
+    }
+
+    .list-check li {
+      margin-bottom: 6px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .list-check li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+    }
+
+    .list-simple {
+      margin: 16px 0 0;
+    }
+
+    .lead-form {
+      margin-top: 20px;
+      max-width: 640px;
+    }
+
+    .form-row {
+      margin-bottom: 14px;
+    }
+
+    .form-row label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .form-row input,
+    .form-row textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    .form-row input:focus,
+    .form-row textarea:focus {
+      outline: 2px solid var(--accent);
+      border-color: var(--accent);
+    }
+
+    .btn.btn-primary {
+      display: inline-block;
+      padding: 10px 22px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn.btn-primary:hover {
+      background: #c97622;
+    }
+
+    footer {
+      padding: 24px 0 32px;
+      font-size: 14px;
+      color: var(--muted);
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <div class="topnav">
+  <header class="hero hero-pomorskie">
     <div class="container">
-      <a href="/" class="logo-link">
-        <img src="logo-sosnowe-chwile.png" alt="Sosnowe Chwile Pellet">
-      </a>
-      <nav>
-        <a href="/">Strona główna</a>
-        <a href="/pomorskie.html">Pellet Pomorskie</a>
-        <a href="/mazowieckie.html">Pellet Mazowieckie</a>
-      </nav>
-      <a href="tel:+48793573900" class="btn-phone">+48 793 573 900</a>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <span class="badge">Dostawy hurtowe • Województwo pomorskie</span>
-      <h1>Pellet drzewny Pomorskie – dostawy hurtowe od 5 ton</h1>
-      <p>Regularnie dostarczamy pellet drzewny do firm, wspólnot i obiektów usługowych na terenie całego województwa pomorskiego. Gdańsk, Gdynia, Sopot, Wejherowo, Tczew, Słupsk i okolice.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#kontakt">Zapytaj o wycenę</a>
-        <a class="btn btn-whatsapp"
-           href="https://wa.me/48793573900?text=Cze%C5%9B%C4%87%2C%20pisz%C4%99%20w%20sprawie%20oferty%20hurtowej%20pelletu%20%E2%80%93%20wojew%C3%B3dztwo%20pomorskie"
-           target="_blank" rel="noopener noreferrer">
-          Napisz na WhatsApp
-        </a>
+      <p class="hero-kicker">Dostawy pelletu – woj. pomorskie</p>
+      <h1>Pellet drzewny z dostawą na Pomorzu od 5 ton</h1>
+      <p class="hero-subtitle">
+        Obsługujemy wspólnoty mieszkaniowe, firmy, składy opału i obiekty usługowe
+        w Trójmieście i całym województwie pomorskim.
+      </p>
+      <div class="hero-cta">
+        <a href="#formularz" class="btn btn-primary">Zapytaj o dostawę</a>
+        <span class="hero-info">Odpowiedź zwykle w ciągu 1 dnia roboczego</span>
       </div>
     </div>
-  </section>
+  </header>
 
-  <main>
-
-    <!-- OFERTA HURTOWA -->
-    <section class="section">
-      <div class="container">
-        <h2>Oferta hurtowa pelletu dla firm i wspólnot w województwie pomorskim</h2>
-        <p class="lead">Specjalizujemy się w obsłudze większych odbiorców – firm, wspólnot mieszkaniowych, zarządców budynków i obiektów usługowych. Oferty hurtowe od 5 ton z dopasowaną logistyką.</p>
-        <div class="grid-3">
-          <div class="card">
-            <h3>Pellet HURT – od 5 ton</h3>
-            <div class="price">od 1 690 zł / tona</div>
-            <p class="muted">Indywidualna wycena uwzględniająca lokalizację, wolumen zamówienia oraz sposób rozładunku na miejscu.</p>
-            <p><strong>Dla kogo:</strong> firmy, wspólnoty, hotele, obiekty usługowe, zarządcy budynków.</p>
-            <a class="btn btn-whatsapp"
-               href="https://wa.me/48793573900?text=Cze%C5%9B%C4%87%2C%20interesuje%20mnie%20oferta%20HURT%20pelletu%20%E2%80%93%20Pomorskie"
-               target="_blank" rel="noopener noreferrer">
-              Zapytaj o ofertę HURT
-            </a>
-          </div>
-          <div class="card">
-            <h3>Pellet STANDARD A1</h3>
-            <div class="price">1 790 zł / tona</div>
-            <p class="muted">Dostępny także jako uzupełnienie zamówień hurtowych lub dla mniejszych odbiorców indywidualnych.</p>
-            <p><strong>Dla kogo:</strong> klienci indywidualni, domy jednorodzinne.</p>
-            <a class="btn btn-whatsapp"
-               href="https://wa.me/48793573900?text=Cze%C5%9B%C4%87%2C%20interesuje%20mnie%20Pellet%20STANDARD%20A1%20%E2%80%93%20Pomorskie"
-               target="_blank" rel="noopener noreferrer">
-              Zapytaj o STANDARD A1
-            </a>
-          </div>
-          <div class="card">
-            <h3>Pellet PREMIUM A1</h3>
-            <div class="price">1 990 zł / tona</div>
-            <p class="muted">Wyższa jakość spalania, mniej popiołu, stabilne parametry. Polecany do nowoczesnych kotłów z automatyką.</p>
-            <p><strong>Dla kogo:</strong> wymagający użytkownicy, nowoczesne kotły.</p>
-            <a class="btn btn-whatsapp"
-               href="https://wa.me/48793573900?text=Cze%C5%9B%C4%87%2C%20interesuje%20mnie%20Pellet%20PREMIUM%20A1%20%E2%80%93%20Pomorskie"
-               target="_blank" rel="noopener noreferrer">
-              Zapytaj o PREMIUM A1
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DOSTAWA -->
-    <section class="section" style="padding-top:0">
-      <div class="container">
-        <h2>Dostawa pelletu – Gdańsk, Gdynia, Sopot i całe Pomorskie</h2>
-        <p class="lead">Realizujemy dostawy pelletu do miejscowości w całym województwie pomorskim. Planujemy transport tak, aby rozładunek był jak najmniej uciążliwy dla Twojej firmy lub wspólnoty.</p>
-        <div class="grid-2">
-          <div class="card">
-            <h3>Najczęściej dostarczamy do:</h3>
-            <ul class="clean">
-              >Gdańska, Gdyni i Sopotu</li>
-              >Wejherowa, Redy, Rumi i okolic</li>
-              >Tczewa, Pruszcza Gdańskiego i Starogardu Gdańskiego</li>
-              >Słupska, Lęborka i innych miejscowości w regionie</li>
-            </ul>
-            <p style="margin-top:16px" class="muted">Twoja miejscowość nie jest na liście? Skontaktuj się – sprawdzimy możliwości transportu.</p>
-          </div>
-          <div class="card">
-            <h3>Co zyskujesz współpracując z nami:</h3>
-            <ul class="clean">
-              >Jasne zasady i przejrzyste ceny</li>
-              >Możliwość planowania dostaw na cały sezon</li>
-              >Wsparcie przy doborze ilości i rodzaju pelletu</li>
-              >Dopasowanie terminu i sposobu rozładunku do obiektu</li>
-              >Możliwość rozłożenia dostaw na kilka transportów</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- JAK ZAMÓWIĆ -->
-    <section class="section" style="padding-top:0">
-      <div class="container">
-        <h2>Jak zamówić pellet hurtowo w województwie pomorskim?</h2>
-        <p class="lead">Trzy proste kroki – bez zbędnych formalności.</p>
-        <div class="card" style="max-width:680px">
-          <ol class="steps">
-            >Skontaktuj się z nami telefonicznie, przez WhatsApp lub formularz na stronie.</li>
-            >Podaj lokalizację obiektu, szacowaną ilość ton oraz typ kotła lub obiektu.</li>
-            >Otrzymasz propozycję ceny, terminu i organizacji transportu – po akceptacji umawiamy dostawę.</li>
-          </ol>
-          <p style="margin-top:18px">Jeśli potrzebujesz stałych dostaw w sezonie, ustalimy harmonogram kilku transportów, aby zoptymalizować koszty i logistykę.</p>
-          <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
-            <a class="btn btn-primary" href="tel:+48793573900">Zadzwoń: +48 793 573 900</a>
-            <a class="btn btn-whatsapp"
-               href="https://wa.me/48793573900?text=Cze%C5%9B%C4%87%2C%20chc%C4%99%20z%C3%B3%C5%BCy%C4%87%20zam%C3%B3wienie%20hurtowe%20pelletu%20%E2%80%93%20Pomorskie"
-               target="_blank" rel="noopener noreferrer">
-              Napisz na WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- KONTAKT -->
-    <section class="section" id="kontakt" style="padding-top:0">
-      <div class="container">
-        <div class="contact-box">
-          <h2>Skontaktuj się – pellet drzewny Pomorskie</h2>
-          <p>Jeśli szukasz stałego dostawcy pelletu w województwie pomorskim, chętnie przygotujemy ofertę hurtową dopasowaną do Twoich potrzeb.</p>
-          <p><strong>Telefon:</strong> <a href="tel:+48793573900">+48 793 573 900</a></p>
-          <p><strong>E-mail:</strong> <a href="mailto:kontakt@sosnowechwile.pl">kontakt@sosnowechwile.pl</a></p>
-          <p><strong>Płatność:</strong> PayPal, karta, przelew</p>
-          <a class="btn btn-whatsapp" style="margin-top:10px"
-             href="https://wa.me/48793573900?text=Cze%C5%9B%C4%87%2C%20pisz%C4%99%20w%20sprawie%20oferty%20hurtowej%20pelletu%20%E2%80%93%20Pomorskie"
-             target="_blank" rel="noopener noreferrer">
-            Napisz na WhatsApp
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
+  <section class="section" id="obszar">
     <div class="container">
-      <strong>Sosnowe Chwile Pellet</strong>
-      <nav>
-        <a href="/">Strona główna</a>
-        <a href="/pomorskie.html">Pellet Pomorskie</a>
-        <a href="/mazowieckie.html">Pellet Mazowieckie</a>
-      </nav>
-      <small>© 2026 Sosnowe Chwile – Pellet drzewny z dostawą w całej Polsce • +48 793 573 900 • kontakt@sosnowechwile.pl</small>
-    </div>
-  </footer>
-
-</body>
-</html>
+      <h2>Gdzie dowozimy pellet w Pomorskiem</h2>
+      <p>
+        Realizujemy dostawy pelletu drzewnego w całym województwie pomorskim
+        – w szczególności w rejonie Trójmiasta i większych miast regionu.
+      </p>
+      
