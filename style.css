@@ -169,13 +169,84 @@ header nav a:hover {
   padding: 40px 32px;
   margin: 40px 0 32px;
    .hero {
-  background-image: 
- .hero {
-  background-image: 
-    linear-gradient(rgba(10, 30, 10, 0.75), rgba(10, 30, 10, 0.85)),
-    url('pellet.jpg');
-  background-size: cover;
-  background-position: center;
+  /* === BANER PROMOCYJNY === */
+.banner-promo {
+  width: 100%;
+  background: linear-gradient(135deg, #0e2a0e 0%, #1e4d1e 40%, #0e2a0e 100%);
+  border-top: 2px solid #f5c842;
+  border-bottom: 2px solid #f5c842;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.banner-link {
+  display: block;
+  text-decoration: none;
+  padding: 16px 20px;
+}
+
+.banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.banner-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.banner-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #f5c842;
+}
+
+.banner-headline {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #d4ead4;
+  font-weight: 500;
+}
+
+.banner-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.banner-price {
+  font-size: 0.85rem;
+  color: #d4ead4;
+}
+
+.banner-price strong {
+  font-size: 1.3rem;
+  color: #f5c842;
+  font-weight: 800;
+}
+
+.banner-btn {
+  background: #f5c842;
+  color: #0e2a0e;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.banner-link:hover .banner-btn {
+  background: #ffd700;
+}
 }
 }
 
@@ -299,82 +370,4 @@ footer nav a:hover {
 
   .contact {
     padding: 20px 16px;
-  }
-}/* === BANER PROMOCYJNY === */
-.banner-promo {
-  width: 100%;
-  background: linear-gradient(135deg, #0e2a0e 0%, #1e4d1e 40%, #0e2a0e 100%);
-  border-top: 2px solid #f5c842;
-  border-bottom: 2px solid #f5c842;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-}
-
-.banner-link {
-  display: block;
-  text-decoration: none;
-  padding: 16px 20px;
-}
-
-.banner-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.banner-left {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.banner-badge {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #f5c842;
-}
-
-.banner-headline {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #d4ead4;
-  font-weight: 500;
-}
-
-.banner-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  flex-shrink: 0;
-}
-
-.banner-price {
-  font-size: 0.85rem;
-  color: #d4ead4;
-}
-
-.banner-price strong {
-  font-size: 1.3rem;
-  color: #f5c842;
-  font-weight: 800;
-}
-
-.banner-btn {
-  background: #f5c842;
-  color: #0e2a0e;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-weight: 700;
-  font-size: 0.85rem;
-  white-space: nowrap;
-  transition: background 0.2s;
-}
-
-.banner-link:hover .banner-btn {
-  background: #ffd700;
-}
+  
