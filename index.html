@@ -6,46 +6,187 @@
   <title>Sosnowe Chwile Pellet | Pellet z dostawą</title>
   <meta name="description" content="Sprzedaż pelletu drzewnego premium z dostawą w całej Polsce. Cennik, oferta, szybki kontakt, płatność PayPal i kartą." />
   <style>
-    :root{--green:#2f5d3a;--green-dark:#23472c;--accent:#e08a2e;--bg:#f6f7f3;--text:#1f2933;--muted:#5b6770;--card:#fff;--border:#d9e1d8}
+    :root{
+      --green:#2f5d3a;
+      --green-dark:#23472c;
+      --accent:#e08a2e;
+      --bg:#f6f7f3;
+      --text:#1f2933;
+      --muted:#5b6770;
+      --card:#fff;
+      --border:#d9e1d8
+    }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6
+    }
     .container{width:min(1120px,calc(100% - 32px));margin:0 auto}
-    .hero{position:relative;min-height:88vh;min-height:100svh;display:flex;align-items:center;color:#fff;background:linear-gradient(rgba(18,33,20,.58),rgba(18,33,20,.58)),url('1000042143.jpg') center/cover no-repeat}
+    .hero{
+      position:relative;
+      min-height:88vh;
+      min-height:100svh;
+      display:flex;
+      align-items:center;
+      color:#fff;
+      background:linear-gradient(rgba(18,33,20,.58),rgba(18,33,20,.58)),url('1000042143.jpg') center/cover no-repeat
+    }
     .hero-inner{padding:48px 0 40px;max-width:760px}
-    .logo{height:52px;margin-bottom:18px;display:block;background:#fff;padding:6px;border-radius:8px}
-    .badge{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);padding:8px 14px;border-radius:999px;font-size:14px;margin-bottom:18px;backdrop-filter:blur(6px)}
-    h1{font-size:clamp(34px,5vw,64px);line-height:1.05;margin:0 0 16px;letter-spacing:-.02em;text-shadow:0 2px 14px rgba(0,0,0,.35)}
-    .hero p{font-size:clamp(16px,2vw,20px);max-width:650px;color:rgba(255,255,255,.92);margin:0 0 28px;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+    .logo{
+      height:72px;
+      margin-bottom:22px;
+      display:block;
+      background:#fff;
+      padding:8px 10px;
+      border-radius:12px
+    }
+    .badge{
+      display:inline-block;
+      background:rgba(255,255,255,.16);
+      border:1px solid rgba(255,255,255,.25);
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:14px;
+      margin-bottom:18px;
+      backdrop-filter:blur(6px)
+    }
+    h1{
+      font-size:clamp(34px,5vw,64px);
+      line-height:1.05;
+      margin:0 0 16px;
+      letter-spacing:-.02em;
+      text-shadow:0 2px 14px rgba(0,0,0,.35)
+    }
+    .hero p{
+      font-size:clamp(16px,2vw,20px);
+      max-width:650px;
+      color:rgba(255,255,255,.92);
+      margin:0 0 28px;
+      text-shadow:0 2px 10px rgba(0,0,0,.25)
+    }
     .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-block;text-decoration:none;border:none;cursor:pointer;padding:14px 22px;border-radius:12px;font-weight:700;transition:.2s ease}
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      border:none;
+      cursor:pointer;
+      padding:14px 22px;
+      border-radius:12px;
+      font-weight:700;
+      transition:.2s ease
+    }
     .btn-primary{background:var(--accent);color:#fff}
-    .btn-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35)}
+    .btn-secondary{
+      background:transparent;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.35)
+    }
+    .btn-whatsapp{
+      background:#25D366;
+      color:#fff;
+      border:none
+    }
+    .btn-whatsapp:hover{
+      background:#1ebe5b
+    }
     .section{padding:72px 0}
-    .section h2{font-size:clamp(26px,3vw,40px);margin:0 0 14px;line-height:1.1}
-    .section .lead{color:var(--muted);max-width:760px;margin:0 0 30px;font-size:18px}
+    .section h2{
+      font-size:clamp(26px,3vw,40px);
+      margin:0 0 14px;
+      line-height:1.1
+    }
+    .section .lead{
+      color:var(--muted);
+      max-width:760px;
+      margin:0 0 30px;
+      font-size:18px
+    }
     .grid-2{display:grid;gap:18px;grid-template-columns:repeat(2,1fr)}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px;box-shadow:0 8px 26px rgba(20,30,25,.05)}
-    .price{font-size:28px;font-weight:800;color:var(--green-dark);margin:8px 0 12px}
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:24px;
+      box-shadow:0 8px 26px rgba(20,30,25,.05)
+    }
+    .price{
+      font-size:28px;
+      font-weight:800;
+      color:var(--green-dark);
+      margin:8px 0 12px
+    }
     .muted{color:var(--muted)}
     ul.clean{padding-left:18px;margin:14px 0 0}
     ul.clean li{margin:8px 0}
-    .pricing-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:24px}
-    .pricing-card{background:#fff;border:1px solid #d9e1d8;border-radius:18px;padding:24px;box-shadow:0 8px 26px rgba(20,30,25,.05)}
-    .pricing-card h3{margin:0 0 10px;font-size:24px;line-height:1.2}
+    .pricing-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+      margin-top:24px
+    }
+    .pricing-card{
+      background:#fff;
+      border:1px solid #d9e1d8;
+      border-radius:18px;
+      padding:24px;
+      box-shadow:0 8px 26px rgba(20,30,25,.05)
+    }
+    .pricing-card h3{
+      margin:0 0 10px;
+      font-size:24px;
+      line-height:1.2
+    }
     .pricing-card p{margin:0 0 10px}
     .offer-box{margin-top:24px}
     .offer-box .card p{margin:0 0 10px}
     .payment-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
     .payment-select{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
-    .chip{border:1px solid var(--border);background:#fff;padding:10px 14px;border-radius:999px;cursor:pointer;font-weight:700}
-    .chip.active{background:var(--green-dark);color:#fff;border-color:var(--green-dark)}
-    .pay-panel{border:1px solid var(--border);border-radius:16px;padding:18px;background:#fff}
-    .form-wrap{background:#fff;border:1px solid var(--border);border-radius:20px;padding:28px;box-shadow:0 8px 26px rgba(20,30,25,.05)}
+    .chip{
+      border:1px solid var(--border);
+      background:#fff;
+      padding:10px 14px;
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:700
+    }
+    .chip.active{
+      background:var(--green-dark);
+      color:#fff;
+      border-color:var(--green-dark)
+    }
+    .pay-panel{
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:18px;
+      background:#fff
+    }
+    .form-wrap{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:28px;
+      box-shadow:0 8px 26px rgba(20,30,25,.05)
+    }
     form{display:grid;gap:14px}
-    input,textarea{width:100%;padding:14px 16px;border:1px solid #cfd8d2;border-radius:12px;font:inherit;background:#fff}
+    input,textarea{
+      width:100%;
+      padding:14px 16px;
+      border:1px solid #cfd8d2;
+      border-radius:12px;
+      font:inherit;
+      background:#fff
+    }
     textarea{min-height:130px;resize:vertical}
-    .footer{padding:28px 0 44px;color:var(--muted);border-top:1px solid var(--border);background:#fff}
+    .footer{
+      padding:28px 0 44px;
+      color:var(--muted);
+      border-top:1px solid var(--border);
+      background:#fff
+    }
     .footer small{display:block;margin-top:8px}
     @media (max-width:900px){
       .pricing-grid{grid-template-columns:1fr;gap:14px}
@@ -57,7 +198,7 @@
       .grid-2,.payment-wrap{grid-template-columns:1fr}
       .hero{min-height:100svh;align-items:flex-start}
       .hero-inner{padding:18px 0 28px}
-      .logo{height:44px;margin-bottom:12px}
+      .logo{height:64px;margin-bottom:16px}
       .badge{font-size:13px;padding:7px 12px;margin-bottom:14px}
       h1{font-size:clamp(32px,9vw,52px)}
       .section{padding:56px 0}
@@ -97,20 +238,47 @@
             <div class="price">1 790 zł / tona</div>
             <p class="muted">Dobry wybór do codziennego ogrzewania domu. Sprzedaż w workach 15 kg, na palecie około 1 tony.</p>
             <p><strong>Dla kogo:</strong> klient indywidualny, dom jednorodzinny, sezonowy zapas opału.</p>
+            <p>
+              <a class="btn btn-whatsapp"
+                 href="https://wa.me/48793573900?text=Cze%C5%9B%C4%87%2C%20interesuje%20mnie%20Pellet%20STANDARD%20A1%20z%20oferty%20sosnowechwile.pl"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="Napisz na WhatsApp w sprawie pelletu STANDARD A1">
+                Zapytaj o ten pakiet na WhatsApp
+              </a>
+            </p>
           </div>
+
           <div class="pricing-card">
             <h3>Pellet PREMIUM A1</h3>
             <div class="price">1 990 zł / tona</div>
             <p class="muted">Wyższa jakość spalania, mniej popiołu i stabilne parametry. Polecany do nowoczesnych kotłów.</p>
             <p><strong>Dla kogo:</strong> klienci oczekujący wyższej jakości i czystszej pracy kotła.</p>
+            <p>
+              <a class="btn btn-whatsapp"
+                 href="https://wa.me/48793573900?text=Cze%C5%9B%C4%87%2C%20interesuje%20mnie%20Pellet%20PREMIUM%20A1%20z%20oferty%20sosnowechwile.pl"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="Napisz na WhatsApp w sprawie pelletu PREMIUM A1">
+                Zapytaj o ten pakiet na WhatsApp
+              </a>
+            </p>
           </div>
+
           <div class="pricing-card">
             <h3>Pellet HURT</h3>
             <div class="price">od 1 690 zł / tona</div>
             <p class="muted">Oferta dla firm, wspólnot i większych odbiorców. Wycena indywidualna od 5 ton.</p>
             <p><strong>Dla kogo:</strong> firmy, wspólnoty mieszkaniowe, obiekty usługowe.</p>
+            <p>
+              <a class="btn btn-whatsapp"
+                 href="https://wa.me/48793573900?text=Cze%C5%9B%C4%87%2C%20interesuje%20mnie%20oferta%20HURT%20pelletu%20z%20sosnowechwile.pl"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="Napisz na WhatsApp w sprawie oferty HURT">
+                Zapytaj o ofertę HURT na WhatsApp
+              </a>
+            </p>
           </div>
         </div>
+
         <div class="offer-box">
           <div class="card">
             <h3>Propozycja dla klienta</h3>
@@ -134,7 +302,7 @@
 
           <p style="margin-top:14px;"><strong>Kontakt przez WhatsApp:</strong></p>
           <p>
-            <a class="btn btn-secondary"
+            <a class="btn btn-whatsapp"
                href="https://wa.me/48793573900?text=Cze%C5%9B%C4%87%2C%20pisz%C4%99%20w%20sprawie%20pelletu%20ze%20strony%20sosnowechwile.pl"
                target="_blank" rel="noopener noreferrer"
                aria-label="Napisz na WhatsApp w sprawie pelletu Sosnowe Chwile">
@@ -231,8 +399,8 @@
 
     const packages = {
       standard: { label: 'Pellet standard', amount: '1790.00' },
-      premium: { label: 'Pellet premium', amount: '1990.00' },
-      hurt: { label: 'Pellet hurt', amount: '1690.00' }
+      premium:  { label: 'Pellet premium',  amount: '1990.00' },
+      hurt:     { label: 'Pellet hurt',     amount: '1690.00' }
     };
 
     let activePack = 'standard';
