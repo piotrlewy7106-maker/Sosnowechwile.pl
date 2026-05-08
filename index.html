@@ -5,290 +5,149 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sosnowe Chwile Pellet | Pellet z dostawą</title>
   <meta name="description" content="Sprzedaż pelletu drzewnego premium z dostawą w całej Polsce. Cennik, oferta, szybki kontakt, płatność PayPal i kartą." />
-  <style>
-    :root{
-      --green:#2f5d3a;
-      --green-dark:#23472c;
-      --accent:#e08a2e;
-      --bg:#f6f7f3;
-      --text:#1f2933;
-      --muted:#5b6770;
-      --card:#fff;
-      --border:#d9e1d8
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Arial,Helvetica,sans-serif;
-      color:var(--text);
-      background:var(--bg);
-      line-height:1.6
-    }
-    .container{width:min(1120px,calc(100% - 32px));margin:0 auto}
-    .hero{
-      position:relative;
-      min-height:100svh;
-      display:flex;
-      align-items:center;
-      color:#fff;
-      background:linear-gradient(rgba(18,33,20,.58),rgba(18,33,20,.58)),url('1000042143.jpg') center/cover no-repeat
-    }
-    .hero-inner{padding:48px 0 40px;max-width:760px}
-    .logo{
-      height:72px;
-      margin-bottom:22px;
-      display:block;
-      background:#fff;
-      padding:8px 10px;
-      border-radius:12px
-    }
-    .badge{
-      display:inline-block;
-      background:rgba(255,255,255,.16);
-      border:1px solid rgba(255,255,255,.25);
-      padding:8px 14px;
-      border-radius:999px;
-      font-size:14px;
-      margin-bottom:18px;
-      backdrop-filter:blur(6px)
-    }
-    h1{
-      font-size:clamp(34px,5vw,64px);
-      line-height:1.05;
-      margin:0 0 16px;
-      letter-spacing:-.02em;
-      text-shadow:0 2px 14px rgba(0,0,0,.35)
-    }
-    .hero p{
-      font-size:clamp(16px,2vw,20px);
-      max-width:650px;
-      color:rgba(255,255,255,.92);
-      margin:0 0 28px;
-      text-shadow:0 2px 10px rgba(0,0,0,.25)
-    }
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{
-      display:inline-block;
-      text-decoration:none;
-      border:none;
-      cursor:pointer;
-      padding:14px 22px;
-      border-radius:12px;
-      font-weight:700;
-      transition:.2s ease;
-      text-align:center
-    }
-    .btn-primary{background:var(--accent);color:#fff}
-    .btn-secondary{
-      background:transparent;
-      color:#fff;
-      border:1px solid rgba(255,255,255,.35)
-    }
-    .btn-whatsapp{
-      background:#25D366;
-      color:#fff;
-      border:none;
-      margin-top:10px;
-      width:100%
-    }
-    .btn-whatsapp:hover{background:#1ebe5b}
-    .section{padding:72px 0}
-    .section h2{
-      font-size:clamp(26px,3vw,40px);
-      margin:0 0 14px;
-      line-height:1.1;
-      text-align:center
-    }
-    .section .lead{
-      color:var(--muted);
-      max-width:760px;
-      margin:0 auto 30px;
-      font-size:18px;
-      text-align:center
-    }
-
-    /* ===== REGION BUTTONS ===== */
-    .region-section{background:#edf1eb; border-bottom: 1px solid var(--border);}
-    .region-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:14px;margin-top:20px}
-    .btn-region{
-      background:#fff;
-      border:2px solid var(--border);
-      padding:20px;
-      border-radius:16px;
-      text-align:center;
-      font-weight:700;
-      color:var(--text);
-      text-decoration:none;
-      transition:.2s;
-    }
-    .btn-region:hover{border-color:var(--accent); transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,0,0,.05)}
-
-    .pricing-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-      margin-top:24px
-    }
-    .pricing-card{
-      background:#fff;
-      border:1px solid #d9e1d8;
-      border-radius:18px;
-      padding:24px;
-      box-shadow:0 8px 26px rgba(20,30,25,.05);
-      display:flex;
-      flex-direction:column;
-      text-align:center
-    }
-    .price{
-      font-size:28px;
-      font-weight:800;
-      color:var(--green-dark);
-      margin:8px 0 12px
-    }
-    .muted{color:var(--muted); flex-grow:1; margin-bottom:15px}
-
-    /* ===== FAQ STYLE ===== */
-    .faq-section{padding:60px 0; background:#f9faf7;}
-    .faq-item{border-radius:14px;background:#fff;border:1px solid var(--border);margin-bottom:10px;overflow:hidden;}
-    .faq-question{width:100%;text-align:left;padding:16px 20px;background:transparent;border:none;font-size:16px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--text);}
-    .faq-icon{font-size:20px;color:var(--accent);transition:transform .25s;}
-    .faq-answer{max-height:0;overflow:hidden;padding:0 20px;transition:max-height .25s ease,padding .25s ease;background:#fafbf8;}
-    .faq-item.open .faq-answer{max-height:400px;padding:12px 20px 20px;border-top:1px solid #edf1eb;}
-    .faq-item.open .faq-icon{transform:rotate(45deg);}
-
-    .form-wrap{background:#fff;border:1px solid var(--border);border-radius:20px;padding:28px;}
-    form{display:grid;gap:14px}
-    input,textarea{width:100%;padding:14px 16px;border:1px solid #cfd8d2;border-radius:12px;font:inherit;}
-    .footer{padding:40px 0;text-align:center;color:var(--muted);border-top:1px solid var(--border);background:#fff}
-
-    /* ===== MOBILE GALLERY (SLIDER) ===== */
-    @media (max-width:900px){
-      .pricing-grid{
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding: 10px 0 30px;
-        gap: 16px;
-        -webkit-overflow-scrolling: touch;
-        margin-left: -16px;
-        margin-right: -16px;
-        padding-left: 16px;
-        padding-right: 16px;
-      }
-      .pricing-card{
-        min-width: 280px;
-        flex: 0 0 280px;
-        scroll-snap-align: center;
-      }
-      .pricing-grid::-webkit-scrollbar { display: none; }
-      .pricing-grid { -ms-overflow-style: none; scrollbar-width: none; }
-    }
-    @media (max-width:520px){
-      .hero-actions{flex-direction:column}
-      .btn{width:100%}
-    }
-  </style>
-
+  <link rel="stylesheet" href="style.css" />
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Jakie jest minimalne zamówienie pelletu?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Minimalne zamówienie to zwykle jedna paleta pelletu (około 1 tona)."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Ile trwa dostawa pelletu?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Standardowo od 2 do 5 dni roboczych od potwierdzenia zamówienia."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Jakie formy płatności są dostępne?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Za pellet możesz zapłacić online przez PayPal, kartą lub przelewem."
-        }
-      }
-    ]
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+  {
+  "@type": "Question",
+  "name": "Jakie jest minimalne zamówienie pelletu?",
+  "acceptedAnswer": {
+  "@type": "Answer",
+  "text": "Minimalne zamówienie to zwykle jedna paleta pelletu (około 1 tona)."
+  }
+  },
+  {
+  "@type": "Question",
+  "name": "Ile trwa dostawa pelletu?",
+  "acceptedAnswer": {
+  "@type": "Answer",
+  "text": "Standardowo od 2 do 5 dni roboczych od potwierdzenia zamówienia."
+  }
+  },
+  {
+  "@type": "Question",
+  "name": "Jakie formy płatności są dostępne?",
+  "acceptedAnswer": {
+  "@type": "Answer",
+  "text": "Za pellet możesz zapłacić online przez PayPal, kartą lub przelewem."
+  }
+  }
+  ]
   }
   </script>
 </head>
 <body>
   <header class="hero">
-    <div class="container hero-inner">
-      <img src="logo-sosnowe-chwile.png" alt="Sosnowe Chwile" class="logo">
-      <span class="badge">Pellet premium • Dostawa w całej Polsce</span>
-      <h1>Sosnowe Chwile Pellet — wygodna sprzedaż opału online</h1>
-      <p>Atrakcyjna cena, certyfikowana jakość i szybka dostawa pod Twój adres.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#zamow">Zamów pellet</a>
-        <a class="btn btn-secondary" href="#oferta">Zobacz cennik</a>
-      </div>
-    </div>
+  <div class="container hero-inner">
+  <img src="logo-sosnowe-chwile.png" alt="Sosnowe Chwile" class="logo">
+  <span class="badge">Pellet premium • Dostawa w całej Polsce</span>
+  <h1>Sosnowe Chwile Pellet — wygodna sprzedaż opału online</h1>
+  <p>Atrakcyjna cena, certyfikowana jakość i szybka dostawa pod Twój adres.</p>
+  <div class="hero-actions">
+  <a class="btn btn-primary" href="#zamow">Zamów pellet</a>
+  <a class="btn btn-secondary" href="#oferta">Zobacz cennik</a>
+  </div>
+  </div>
   </header>
 
   <main>
-    <!-- Sekcja Regionów -->
-    <section class="section region-section">
-      <div class="container">
-        <h2>Dostawa w Twoim regionie</h2>
-        <p class="lead">Wybierz województwo, aby sprawdzić ofertę lokalną:</p>
-        <div class="region-grid">
-          <a href="pomorskie.html" class="btn-region">📍 Woj. Pomorskie</a>
-          <a href="mazowieckie.html" class="btn-region">📍 Woj. Mazowieckie</a>
-        </div>
-      </div>
-    </section>
+  <!-- Sekcja Regionów -->
+  <section class="section region-section">
+  <div class="container">
+  <h2>Dostawa w Twoim regionie</h2>
+  <p class="lead">Wybierz województwo, aby sprawdzić ofertę lokalną:</p>
+  <div class="region-grid">
+  <a href="pomorskie.html" class="btn-region">📍 Woj. Pomorskie</a>
+  <a href="mazowieckie.html" class="btn-region">📍 Woj. Mazowieckie</a>
+  </div>
+  </div>
+  </section>
 
-    <!-- Sekcja Oferty (Slider na mobile) -->
-    <section class="section" id="oferta">
-      <div class="container">
-        <h2>Cennik i oferta</h2>
-        <p class="lead">Przesuń w bok na telefonie, aby zobaczyć wszystkie opcje:</p>
-        <div class="pricing-grid">
-          <div class="pricing-card">
-            <div style="font-size:40px; margin-bottom:10px;">🪵</div>
-            <h3>STANDARD A1</h3>
-            <div class="price">1 790 zł / tona</div>
-            <p class="muted">Dobry wybór do codziennego ogrzewania domu. Jasny kolor i niska wilgotność.</p>
-            <a class="btn btn-whatsapp" href="https://wa.me/48793573900?text=Dzień%20dobry,%20interesuje%20mnie%20Pellet%20STANDARD%20A1" target="_blank">Zapytaj na WhatsApp</a>
-          </div>
-          <div class="pricing-card">
-            <div style="font-size:40px; margin-bottom:10px;">🔥</div>
-            <h3>PREMIUM A1</h3>
-            <div class="price">1 990 zł / tona</div>
-            <p class="muted">Wyższa jakość spalania, certyfikowany, śladowa ilość popiołu i wysoka kaloryczność.</p>
-            <a class="btn btn-whatsapp" href="https://wa.me/48793573900?text=Dzień%20dobry,%20interesuje%20mnie%20Pellet%20PREMIUM%20A1" target="_blank">Zapytaj na WhatsApp</a>
-          </div>
-          <div class="pricing-card">
-            <div style="font-size:40px; margin-bottom:10px;">🏗️</div>
-            <h3>HURT</h3>
-            <div class="price">od 1 690 zł / tona</div>
-            <p class="muted">Specjalna oferta dla firm, wspólnot mieszkaniowych i zamówień od 5 ton.</p>
-            <a class="btn btn-whatsapp" href="https://wa.me/48793573900?text=Dzień%20dobry,%20interesuje%20mnie%20oferta%20HURTOWA" target="_blank">Zapytaj na WhatsApp</a>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- Sekcja Oferty (Slider na mobile) -->
+  <section class="section" id="oferta">
+  <div class="container">
+  <h2>Cennik i oferta</h2>
+  <p class="lead">Przesuń w bok na telefonie, aby zobaczyć wszystkie opcje:</p>
+  <div class="pricing-grid">
+  <div class="pricing-card">
+  <div style="font-size:40px; margin-bottom:10px;">🪵</div>
+  <h3>STANDARD A1</h3>
+  <div class="price">1 790 zł / tona</div>
+  <p class="muted">Dobry wybór do codziennego ogrzewania domu. Jasny kolor i niska wilgotność.</p>
+  <a class="btn btn-whatsapp" href="https://wa.me/48793573900?text=Dzień%20dobry,%20interesuje%20mnie%20Pellet%20STANDARD%20A1" target="_blank">Zapytaj na WhatsApp</a>
+  </div>
+  <div class="pricing-card">
+  <div style="font-size:40px; margin-bottom:10px;">🔥</div>
+  <h3>PREMIUM A1</h3>
+  <div class="price">1 990 zł / tona</div>
+  <p class="muted">Wyższa jakość spalania, certyfikowany, śladowa ilość popiołu i wysoka kaloryczność.</p>
+  <a class="btn btn-whatsapp" href="https://wa.me/48793573900?text=Dzień%20dobry,%20interesuje%20mnie%20Pellet%20PREMIUM%20A1" target="_blank">Zapytaj na WhatsApp</a>
+  </div>
+  <div class="pricing-card">
+  <div style="font-size:40px; margin-bottom:10px;">🏗️</div>
+  <h3>HURT</h3>
+  <div class="price">od 1 690 zł / tona</div>
+  <p class="muted">Specjalna oferta dla firm, wspólnot mieszkaniowych i zamówień od 5 ton.</p>
+  <a class="btn btn-whatsapp" href="https://wa.me/48793573900?text=Dzień%20dobry,%20interesuje%20mnie%20oferta%20HURTOWA" target="_blank">Zapytaj na WhatsApp</a>
+  </div>
+  </div>
+  </div>
+  </section>
 
-    <!-- FAQ -->
-    <section class="faq-section" id="faq">
-      <div class="container">
-        <h2>FAQ – najczęstsze pytania</h2>
-        <div class="faq-item">
-          <button class="faq-question">Jakie jest minimalne zamówienie pelletu? <span class="faq-icon">+</span></button>
-          <div class="faq-answer"><p>Minimalne zamówienie to zwykle jedna paleta pelletu (około 1 tona).</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Ile trwa dostawa pelletu? <span class="faq-icon">+</span></button>
-          <div class="faq-answer"><p>Standardowo dostawa zajmuje od 2 do 5 dni roboczych
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+  <div class="container">
+  <h2>FAQ – najczęstsze pytania</h2>
+  <div class="faq-item">
+  <button class="faq-question">Jakie jest minimalne zamówienie pelletu? <span class="faq-icon">+</span></button>
+  <div class="faq-answer"><p>Minimalne zamówienie to zwykle jedna paleta pelletu (około 1 tona).</p></div>
+  </div>
+  <div class="faq-item">
+  <button class="faq-question">Ile trwa dostawa pelletu? <span class="faq-icon">+</span></button>
+  <div class="faq-answer"><p>Standardowo dostawa zajmuje od 2 do 5 dni roboczych od potwierdzenia zamówienia.</p></div>
+  </div>
+  <div class="faq-item">
+  <button class="faq-question">Jakie formy płatności są dostępne? <span class="faq-icon">+</span></button>
+  <div class="faq-answer"><p>Za pellet możesz zapłacić online przez PayPal, kartą lub przelewem.</p></div>
+  </div>
+  </div>
+  </section>
+
+  <!-- Formularz kontaktowy -->
+  <section class="section" id="zamow">
+  <div class="container">
+  <h2>Zamów pellet lub zapytaj o ofertę</h2>
+  <p class="lead">Wypełnij formularz, a odezwiemy się do Ciebie w ciągu 24 godzin.</p>
+  <div class="form-wrap">
+  <form action="https://formspree.io/f/xnnjovkv" method="POST">
+  <input type="text" name="name" placeholder="Imię i nazwisko" required />
+  <input type="tel" name="phone" placeholder="Numer telefonu" required />
+  <input type="email" name="email" placeholder="Adres e-mail" required />
+  <input type="text" name="city" placeholder="Miasto / miejscowość" required />
+  <textarea name="message" rows="4" placeholder="Wiadomość (opcjonalnie)"></textarea>
+  <button class="btn btn-primary" type="submit">Wyślij zapytanie</button>
+  </form>
+  </div>
+  </div>
+  </section>
+  </main>
+
+  <footer class="footer">
+  <div class="container">
+  <p>© 2025 Sosnowe Chwile Pellet. Wszelkie prawa zastrzeżone.</p>
+  </div>
+  </footer>
+
+  <script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+  const item = btn.closest('.faq-item');
+  item.classList.toggle('open');
+  });
+  });
+  </script>
+</body>
+</html>
