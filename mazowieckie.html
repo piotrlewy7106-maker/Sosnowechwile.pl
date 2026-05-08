@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sosnowe Chwile Pellet | Pellet z dostawą</title>
+  <meta name="description" content="Sprzedaż pelletu drzewnego premium z dostawą w całej Polsce. Cennik, oferta, szybki kontakt, płatność PayPal i kartą." />
+  <style>
+    :root{
+      --green:#2f5d3a;
+      --green-dark:#23472c;
+      --accent:#e08a2e;
+      --bg:#f6f7f3;
+      --text:#1f2933;
+      --muted:#5b6770;
+      --card:#fff;
+      --border:#d9e1d8
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6
+    }
+    .container{width:min(1120px,calc(100% - 32px));margin:0 auto}
+    .hero{
+      position:relative;
+      min-height:88vh;
+      min-height:100svh;
+      display:flex;
+      align-items:center;
+      color:#fff;
+      background:linear-gradient(rgba(18,33,20,.58),rgba(18,33,20,.58)),url('1000042143.jpg') center/cover no-repeat
+    }
+    .hero-inner{padding:48px 0 40px;max-width:760px}
+    .logo{
+      height:72px;
+      margin-bottom:22px;
+      display:block;
+      background:#fff;
+      padding:8px 10px;
+      border-radius:12px
+    }
+    .badge{
+      display:inline-block;
+      background:rgba(255,255,255,.16);
+      border:1px solid rgba(255,255,255,.25);
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:14px;
+      margin-bottom:18px;
+      backdrop-filter:blur(6px)
+    }
+    h1{
+      font-size:clamp(34px,5vw,64px);
+      line-height:1.05;
+      margin:0 0 16px;
+      letter-spacing:-.02em;
+      text-shadow:0 2px 14px rgba(0,0,0,.35)
+    }
+    .hero p{
+      font-size:clamp(16px,2vw,20px);
+      max-width:650px;
+      color:rgba(255,255,255,.92);
+      margin:0 0 28px;
+      text-shadow:0 2px 10px rgba(0,0,0,.25)
+    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      border:none;
+      cursor:pointer;
+      padding:14px 22px;
+      border-radius:12px;
+      font-weight:700;
+      transition:.2s ease
+    }
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-secondary{
+      background:transparent;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.35)
+    }
+    .btn-whatsapp{
+      background:#25D366;
+      color:#fff;
+      border:none
+    }
+    .btn-whatsapp:hover{
+      background:#1ebe5b
+    }
+    .section{padding:72px 0}
+    .section h2{
+      font-size:clamp(26px,3vw,40px);
+      margin:0 0 14px;
+      line-height:1.1
+    }
+    .section .lead{
+      color:var(--muted);
+      max-width:760px;
+      margin:0 0 30px;
+      font-size:18px
+    }
+    .grid-2{display:grid;gap:18px;grid-template-columns:repeat(2,1fr)}
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:24px;
+      box-shadow:0 8px 26px rgba(20,30,25,.05)
+    }
+    .price{
+      font-size:28px;
+      font-weight:800;
+      color:var(--green-dark);
+      margin:8px 0 12px
+    }
+    .muted{color:var(--muted)}
+    ul.clean{padding-left:18px;margin:14px 0 0}
+    ul.clean li{margin:8px 0}
+    .pricing-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+      margin-top:24px
+    }
+    .pricing-card{
+      background:#fff;
+      border:1px solid #d9e1d8;
+      border-radius:18px;
+      padding:24px;
+      box-shadow:0 8px 26px rgba(20,30,25,.05)
+    }
+    .pricing-card h3{
+      margin:0 0 10px;
+      font-size:24px;
+      line-height:1.2
+    }
+    .pricing-card p{margin:0 0 10px}
+    .offer-box{margin-top:24px}
+    .offer-box .card p{margin:0 0 10px}
+    .payment-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    .payment-select{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+    .chip{
+      border:1px solid var(--border);
+      background:#fff;
+      padding:10px 14px;
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:700
+    }
+    .chip.active{
+      background:var(--green-dark);
+      color:#fff;
+      border-color:var(--green-dark)
+    }
+    .pay-panel{
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:18px;
+      background:#fff
+    }
+    .form-wrap{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:28px;
+      box-shadow:0 8px 26px rgba(20,30,25,.05)
+    }
+    form{display:grid;gap:14px}
+    input,textarea{
+      width:100%;
+      padding:14px 16px;
+      border:1px solid #cfd8d2;
+      border-radius:12px;
+      font:inherit;
+      background:#fff
+    }
+    textarea{min-height:130px;resize:vertical}
+    .footer{
+      padding:28px 0 44px;
+      color:var(--muted);
+      border-top:1px solid var(--border);
+      background:#fff
+    }
+    .footer small{display:block;margin-top:8px}
+    @media (max-width:900px){
+      .pricing-grid{grid-template-columns:1fr;gap:14px}
+      .pricing-card{padding:18px;border-radius:16px}
+      .pricing-card h3{font-size:22px}
+      .price{font-size:24px}
+    }
+    @media (max-width:860px){
+      .grid-2,.payment-wrap{grid-template-columns:1fr}
+      .hero{min-height:100svh;align-items:flex-start}
+      .hero-inner{padding:18px 0 28px}
+      .logo{height:64px;margin-bottom:16px}
+      .badge{font-size:13px;padding:7px 12px;margin-bottom:14px}
+      h1{font-size:clamp(32px,9vw,52px)}
+      .section{padding:56px 0}
+    }
+    @media (max-width:520px){
+      .hero-actions{flex-direction:column}
+      .btn{width:100%;text-align:center}
+      .pricing-card{padding:16px;border-radius:14px}
+      .pricing-card h3{font-size:20px}
+      .price{font-size:22px}
+      .card,.form-wrap{padding:18px}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-inner">
+      <img src="logo-sosnowe-chwile.png" alt="Sosnowe Chwile Pellet" class="logo">
+      <span class="badge">Pellet drzewny premium • Dostawa w całej Polsce</span>
+      <h1>Sosnowe Chwile Pellet — wygodna sprzedaż opału online</h1>
+      <p>Pellet drzewny w atrakcyjnej cenie, szybka wycena, prosty kontakt oraz płatność PayPal i kartą.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#zamow">Zamów pellet</a>
+        <a class="btn btn-secondary" href="#oferta">Zobacz cennik</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="oferta">
+      <div class="container">
+        <h2>Cennik i oferta</h2>
+        <p class="lead">Oferujemy pellet drzewny do domu, firmy i większych zamówień. Pomagamy dobrać odpowiednią ilość opału oraz ustalić wygodny termin dostawy.</p>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>Pellet STANDARD A1</h3>
+            <div class="price">1 790 zł / tona</div>
+            <p class="muted">Dobry wybór do codziennego ogrzewania domu. Sprzedaż w workach 15 kg, na palecie około 1 tony.</p>
+            <p><strong>Dla kogo:</strong> klient indywidualny, dom jednorodzinny, sezonowy zapas opału.</p>
+            <p>
+              <a class="btn btn-whatsapp"
+                 href="https://wa.me/48793573900?text=Cze%C5%9B%C4%87%2C%20interesuje%20mnie%20Pellet%20STANDARD%20A1%20z%20oferty%20sosnowechwile.pl"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="Napisz na WhatsApp w sprawie pelletu STANDARD A1">
+                Zapytaj o ten pakiet na WhatsApp
+              </a>
+            </p>
+          </div>
+
+          <div class="pricing-card">
+            <h3>Pellet PREMIUM A1</h3>
+            <div class="price">1 990 zł / tona</div>
+            <p class="muted">Wyższa jakość spalania, mniej popiołu i stabilne parametry. Polecany do nowoczesnych kotłów.</p>
+            <p><strong>Dla kogo:</strong> klienci oczekujący wyższej jakości i czystszej pracy kotła.</p>
+            <p>
+              <a class="btn btn-whatsapp"
+                 href="https://wa.me/48793573900?text=Cze%C5%9B%C4%87%2C%20interesuje%20mnie%20Pellet%20PREMIUM%20A1%20z%20oferty%20sosnowechwile.pl"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="Napisz na WhatsApp w sprawie pelletu PREMIUM A1">
+                Zapytaj o ten pakiet na WhatsApp
+              </a>
+            </p>
+          </div>
+
+          <div class="pricing-card">
+            <h3>Pellet HURT</h3>
+            <div class="price">od 1 690 zł / tona</div>
+            <p class="muted">Oferta dla firm, wspólnot i większych odbiorców. Wycena indywidualna od 5 ton.</p>
+            <p><strong>Dla kogo:</strong> firmy, wspólnoty mieszkaniowe, obiekty usługowe.</p>
+            <p>
+              <a class="btn btn-whatsapp"
+                 href="https://wa.me/48793573900?text=Cze%C5%9B%C4%87%2C%20interesuje%20mnie%20oferta%20HURT%20pelletu%20z%20sosnowechwile.pl"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="Napisz na WhatsApp w sprawie oferty HURT">
+                Zapytaj o ofertę HURT na WhatsApp
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="offer-box">
+          <div class="card">
+            <h3>Propozycja dla klienta</h3>
+            <p><strong>Dla domu jednorodzinnego:</strong> polecamy 2 tony pelletu STANDARD A1 jako korzystny wybór cenowy.</p>
+            <p><strong>Dla nowoczesnego kotła:</strong> polecamy 2 tony pelletu PREMIUM A1 dla czystszego spalania i mniejszej ilości popiołu.</p>
+            <p><strong>Dla firmy lub wspólnoty:</strong> przygotowujemy indywidualną ofertę hurtową wraz z ustaleniem transportu.</p>
+            <p><strong>Zamówienia i kontakt:</strong> +48 793 573 900</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2>Płatność i kontakt</h2>
+
+          <p><strong>Telefon:</strong> +48 793 573 900</p>
+          <p><strong>E-mail:</strong> kontakt@sosnowechwile.pl</p>
+          <p><strong>Płatność:</strong> PayPal, karta, przelew</p>
+
+          <p style="margin-top:14px;"><strong>Kontakt przez WhatsApp:</strong></p>
+          <p>
+            <a class="btn btn-whatsapp"
+               href="https://wa.me/48793573900?text=Cze%C5%9B%C4%87%2C%20pisz%C4%99%20w%20sprawie%20pelletu%20ze%20strony%20sosnowechwile.pl"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Napisz na WhatsApp w sprawie pelletu Sosnowe Chwile">
+              Napisz na WhatsApp
+            </a>
+          </p>
+
+          <p class="muted" style="margin-top:8px;">
+            Kliknij przycisk, aby od razu rozpocząć rozmowę na WhatsApp.
+          </p>
+
+          <div class="payment-wrap" style="margin-top:20px;">
+            <div class="pay-panel">
+              <h3 style="margin-top:0;margin-bottom:10px;">Wybierz pakiet do płatności</h3>
+              <div class="payment-select">
+                <button type="button" class="chip active" data-pack="standard">Standard</button>
+                <button type="button" class="chip" data-pack="premium">Premium</button>
+                <button type="button" class="chip" data-pack="hurt">Hurt</button>
+              </div>
+              <p class="muted" style="margin-top:0">
+                Wybrany pakiet: <strong id="selected-package">Pellet standard</strong>
+              </p>
+
+              <div id="paypal-button-container"></div>
+
+              <div id="card-fields-container" style="margin-top:16px;display:none">
+                <div class="card" style="padding:16px;margin-bottom:12px">
+                  <strong>Płatność kartą</strong>
+                  <p class="muted" style="margin:8px 0 0">
+                    Po podłączeniu PayPal Card Fields tu pojawią się bezpieczne pola karty.
+                  </p>
+                </div>
+                <div id="card-name-field-container" class="card" style="height:52px;margin-bottom:10px"></div>
+                <div id="card-number-field-container" class="card" style="height:52px;margin-bottom:10px"></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+                  <div id="card-expiry-field-container" class="card" style="height:52px"></div>
+                  <div id="card-cvv-field-container" class="card" style="height:52px"></div>
+                </div>
+                <button class="btn btn-primary" type="button"
+                        style="margin-top:12px;width:100%" id="card-field-submit-button">
+                  Zapłać kartą
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Informacje o płatności</h3>
+          <p class="muted">
+            Płatność online obsługuje PayPal. Po wybraniu pakietu możesz zapłacić
+            bezpośrednio przez konto PayPal lub kartą.
+          </p>
+          <ul class="clean">
+            <li>Płatności są szyfrowane i przetwarzane na serwerach PayPal.</li>
+            <li>Po udanej płatności otrzymasz potwierdzenie na e-mail.</li>
+            <li>W razie problemów z płatnością skontaktuj się z nami telefonicznie.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="zamow">
+      <div class="container">
+        <h2>Zamówienie / zapytanie</h2>
+        <p class="lead">Formularz działa w Netlify i zapisuje zgłoszenia w panelu Forms.</p>
+        <div class="form-wrap">
+          <form name="zamowienie-pelletu" method="POST" data-netlify="true" action="/dziekujemy.html">
+            <input type="hidden" name="form-name" value="zamowienie-pelletu" />
+            <input type="text" name="imie" placeholder="Imię i nazwisko" required />
+            <input type="email" name="email" placeholder="E-mail" required />
+            <input type="tel" name="telefon" placeholder="Telefon" required />
+            <input type="text" name="ilosc" placeholder="Ilość (np. 1 paleta / 2 tony)" required />
+            <input type="text" name="adres" placeholder="Adres dostawy" required />
+            <textarea name="wiadomosc" placeholder="Dodatkowe uwagi"></textarea>
+            <button class="btn btn-primary" type="submit">Wyślij zapytanie</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <strong>Sosnowe Chwile Pellet</strong>
+      <small>© 2026. Kontakt: +48 793 573 900 • PayPal • karta • przelew</small>
+    </div>
+  </footer>
+
+  <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=PLN&components=buttons,card-fields"></script>
+  <script>
+    const selectedPackageEl = document.getElementById('selected-package');
+    const cardBox = document.getElementById('card-fields-container');
+
+    const packages = {
+      standard: { label: 'Pellet standard', amount: '1790.00' },
+      premium:  { label: 'Pellet premium',  amount: '1990.00' },
+      hurt:     { label: 'Pellet hurt',     amount: '1690.00' }
+    };
+
+    let activePack = 'standard';
+
+    const chips = document.querySelectorAll('.chip');
+
+    if (chips.length && selectedPackageEl) {
+      chips.forEach(btn => {
+        btn.addEventListener('click', () => {
+          chips.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activePack = btn.dataset.pack;
+          selectedPackageEl.textContent = packages[activePack].label;
+          renderPayPal();
+        });
+      });
+    }
+
+    function renderPayPal() {
+      const c = document.getElementById('paypal-button-container');
+      if (!c) return;
+
+      c.innerHTML = '';
+
+      if (!window.paypal || !paypal.Buttons) {
+        c.innerHTML = '<p class="muted">Dodaj prawidłowy PayPal client-id, aby uruchomić płatności.</p>';
+        return;
+      }
+
+      paypal.Buttons({
+        style: { layout:'vertical', color:'gold', shape:'rect', label:'paypal' },
+        createOrder: (data, actions) => actions.order.create({
+          purchase_units: [{
+            description: packages[activePack].label,
+            amount: { value: packages[activePack].amount, currency_code: 'PLN' }
+          }]
+        }),
+        onApprove: (data, actions) =>
+          actions.order.capture().then(() => alert('Płatność PayPal zakończona pomyślnie.')),
+        onError: () => alert('Błąd płatności PayPal.')
+      }).render('#paypal-button-container');
+    }
+
+    function initCardFields() {
+      if (!window.paypal || !paypal.CardFields || !cardBox) return;
+
+      const cardField = paypal.CardFields({
+        createOrder: (data, actions) => actions.order.create({
+          purchase_units: [{
+            description: packages[activePack].label,
+            amount: { value: packages[activePack].amount, currency_code: 'PLN' }
+          }]
+        }),
+        onApprove: (data, actions) =>
+          actions.order.capture().then(() => alert('Płatność kartą zakończona pomyślnie.')),
+        onError: () => alert('Błąd płatności kartą.'),
+        style: {
+          input: { 'font-size':'16px', 'font-family':'Arial, sans-serif', color:'#223' },
+          '.invalid': { color:'#b00020' }
+        }
+      });
+
+      if (!cardField.isEligible()) return;
+
+      cardBox.style.display = 'block';
+      cardField.NameField().render('#card-name-field-container');
+      cardField.NumberField().render('#card-number-field-container');
+      cardField.ExpiryField().render('#card-expiry-field-container');
+      cardField.CVVField().render('#card-cvv-field-container');
+
+      const submitBtn = document.getElementById('card-field-submit-button');
+      if (submitBtn) {
+        submitBtn.addEventListener('click', () => {
+          cardField.submit({ billingAddress: {} }).then(() => {});
+        });
+      }
+    }
+
+    renderPayPal();
+    initCardFields();
+  </script>
+</body>
+</html>
