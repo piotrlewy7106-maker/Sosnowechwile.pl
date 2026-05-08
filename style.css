@@ -170,11 +170,13 @@ header nav a:hover {
   margin: 40px 0 32px;
    .hero {
   background-image: 
+ .hero {
+  background-image: 
     linear-gradient(rgba(10, 30, 10, 0.75), rgba(10, 30, 10, 0.85)),
-    url('https://images.unsplash.com/photo-1612178537253-bccd437b730e?w=1200&q=80');
+    url('pellet.jpg');
   background-size: cover;
   background-position: center;
-   }
+}
 }
 
 .hero h1 {
