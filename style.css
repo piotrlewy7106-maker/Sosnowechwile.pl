@@ -300,71 +300,81 @@ footer nav a:hover {
   .contact {
     padding: 20px 16px;
   }
-}
-/* Baner promocyjny */
+}/* === BANER PROMOCYJNY === */
 .banner-promo {
   width: 100%;
-  background: linear-gradient(90deg, #1a3a1a 0%, #2d5a2d 50%, #1a3a1a 100%);
-  border-top: 3px solid #f5c842;
-  border-bottom: 3px solid #f5c842;
+  background: linear-gradient(135deg, #0e2a0e 0%, #1e4d1e 40%, #0e2a0e 100%);
+  border-top: 2px solid #f5c842;
+  border-bottom: 2px solid #f5c842;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
 .banner-link {
   display: block;
   text-decoration: none;
-  padding: 18px 20px;
+  padding: 16px 20px;
 }
 
-.banner-content {
+.banner-inner {
   display: flex;
   align-items: center;
-  gap: 14px;
-  max-width: 900px;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 960px;
   margin: 0 auto;
-  flex-wrap: wrap;
 }
 
-.banner-icon {
-  font-size: 2rem;
-  flex-shrink: 0;
-}
-
-.banner-text {
+.banner-left {
   display: flex;
   flex-direction: column;
-  flex: 1;
   gap: 4px;
 }
 
-.banner-text strong {
-  color: #f5c842;
-  font-size: 1rem;
+.banner-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.banner-text span {
-  color: #d4e8d4;
-  font-size: 0.95rem;
-}
-
-.banner-text em {
   color: #f5c842;
-  font-style: normal;
-  font-weight: bold;
 }
 
-.banner-cta {
-  background: #f5c842;
-  color: #1a3a1a;
-  padding: 10px 18px;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 0.9rem;
-  white-space: nowrap;
+.banner-headline {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #d4ead4;
+  font-weight: 500;
+}
+
+.banner-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
   flex-shrink: 0;
 }
 
-.banner-link:hover .banner-cta {
+.banner-price {
+  font-size: 0.85rem;
+  color: #d4ead4;
+}
+
+.banner-price strong {
+  font-size: 1.3rem;
+  color: #f5c842;
+  font-weight: 800;
+}
+
+.banner-btn {
+  background: #f5c842;
+  color: #0e2a0e;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.banner-link:hover .banner-btn {
   background: #ffd700;
 }
