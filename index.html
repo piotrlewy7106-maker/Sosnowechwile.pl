@@ -1,472 +1,81 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sosnowe Chwile Pellet | Pellet z dostawą</title> 
-  <style>
-    /* ===== RESET & BASE ===== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #0f2a0f;
-      color: #f0ede6;
-      line-height: 1.6;
-    }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pellet drzewny z dostawą w całej Polsce – Sosnowe Chwile | od 1 790 zł/t</title>
+  <meta name="description" content="Kup certyfikowany pellet drzewny A1 online z dostawą pod dom w całej Polsce. Pellet STANDARD i PREMIUM dostępny już od 1 790 zł/t. Zamów przez WhatsApp lub formularz – dostawa w 2–5 dni roboczych.">
 
-    /* ===== VARIABLES ===== */
-    :root {
-      --green-dark: #1a3d1a;
-      --green-mid:  #245c24;
-      --green-wa:   #25d366;
-      --green-light:#4caf50;
-      --gold:       #e8c84a;
-      --text:       #f0ede6;
-      --text-muted: #b8d4b8;
-      --radius:     12px;
-      --shadow:     0 4px 20px rgba(0,0,0,0.35);
-    }
-
-    /* ===== UTILS ===== */
-    .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
-    .section { padding: 60px 0; }
-    .section-title {
-      text-align: center;
-      font-size: clamp(1.4rem, 4vw, 2rem);
-      font-weight: 700;
-      margin-bottom: 40px;
-      color: var(--text);
-    }
-    .section-title span { color: var(--green-wa); }
-
-    /* ===== BTN ===== */
-    .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 50px;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: transform .2s, opacity .2s;
-      border: none;
-    }
-    .btn:hover { transform: translateY(-2px); opacity: .9; }
-    .btn-wa {
-      background: var(--green-wa);
-      color: #fff;
-    }
-    .btn-outline {
-      background: transparent;
-      border: 2px solid var(--green-wa);
-      color: var(--green-wa);
-    }
-
-    /* ===== NAV ===== */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(15,42,15,0.97);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--green-mid);
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 20px;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-    .nav-logo { font-size: 1.1rem; font-weight: 800; color: var(--green-wa); }
-    .nav-links { display: flex; gap: 20px; font-size: .9rem; }
-    .nav-links a { color: var(--text-muted); transition: color .2s; }
-    .nav-links a:hover { color: var(--text); }
-    .nav-cta { font-size: .9rem; }
-
-    /* ===== HERO ===== */
-    .hero {
-      background: linear-gradient(160deg, #1a3d1a 0%, #0f2a0f 60%);
-      padding: 80px 20px 60px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: clamp(1.8rem, 6vw, 3rem);
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 16px;
-    }
-    .hero h1 span { color: var(--green-wa); }
-    .hero-sub {
-      font-size: clamp(.95rem, 2.5vw, 1.15rem);
-      color: var(--text-muted);
-      margin-bottom: 32px;
-    }
-    .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-
-    /* trust bar */
-    .trust-bar {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 16px 32px;
-      margin-top: 48px;
-      padding-top: 32px;
-      border-top: 1px solid var(--green-mid);
-      font-size: .88rem;
-      color: var(--text-muted);
-    }
-    .trust-bar span { display: flex; align-items: center; gap: 6px; }
-
-    /* ===== JAK TO DZIAŁA ===== */
-    .steps { background: var(--green-dark); }
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 24px;
-    }
-    .step-card {
-      background: var(--green-mid);
-      border-radius: var(--radius);
-      padding: 28px 20px;
-      text-align: center;
-      box-shadow: var(--shadow);
-    }
-    .step-num {
-      width: 48px; height: 48px;
-      background: var(--green-wa);
-      border-radius: 50%;
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: #fff;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 16px;
-    }
-    .step-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
-    .step-card p { font-size: .88rem; color: var(--text-muted); }
-
-    /* ===== CENNIK ===== */
-    .pricing { background: #0f2a0f; }
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-    }
-    .plan {
-      background: var(--green-dark);
-      border-radius: var(--radius);
-      padding: 32px 24px;
-      text-align: center;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--green-mid);
-      transition: transform .2s;
-    }
-    .plan:hover { transform: translateY(-4px); }
-    .plan.featured {
-      border-color: var(--green-wa);
-      position: relative;
-    }
-    .plan-badge {
-      position: absolute;
-      top: -12px; left: 50%;
-      transform: translateX(-50%);
-      background: var(--green-wa);
-      color: #fff;
-      font-size: .78rem;
-      font-weight: 700;
-      padding: 3px 14px;
-      border-radius: 50px;
-    }
-    .plan h3 { font-size: 1.2rem; margin-bottom: 4px; }
-    .plan-price {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--gold);
-      margin: 12px 0 4px;
-    }
-    .plan-price span { font-size: 1rem; font-weight: 400; color: var(--text-muted); }
-    .plan-min { font-size: .8rem; color: var(--text-muted); margin-bottom: 20px; }
-    .plan-features { list-style: none; margin-bottom: 24px; text-align: left; }
-    .plan-features li {
-      padding: 6px 0;
-      font-size: .9rem;
-      border-bottom: 1px solid var(--green-mid);
-      display: flex; gap: 8px; align-items: flex-start;
-    }
-    .plan-features li::before { content: "✓"; color: var(--green-wa); font-weight: 700; flex-shrink: 0; }
-
-    /* ===== PARAMETRY ===== */
-    .params { background: var(--green-dark); }
-    .params-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 20px;
-    }
-    .param-card {
-      background: var(--green-mid);
-      border-radius: var(--radius);
-      padding: 24px 16px;
-      text-align: center;
-      box-shadow: var(--shadow);
-    }
-    .param-icon { font-size: 2rem; margin-bottom: 12px; }
-    .param-label { font-size: .8rem; color: var(--text-muted); margin-bottom: 4px; }
-    .param-value { font-size: 1.05rem; font-weight: 700; color: var(--green-wa); }
-
-    /* ===== OBSZAR DOSTAWY ===== */
-    .delivery { background: #0f2a0f; }
-    .delivery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-    }
-    .delivery-card {
-      background: var(--green-dark);
-      border-radius: var(--radius);
-      padding: 32px 24px;
-      text-align: center;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--green-mid);
-    }
-    .delivery-card .dc-icon { font-size: 2.5rem; margin-bottom: 12px; }
-    .delivery-card h3 { font-size: 1.15rem; margin-bottom: 8px; }
-    .delivery-card p { color: var(--text-muted); font-size: .9rem; margin-bottom: 20px; }
-
-    /* ===== OPINIE ===== */
-    .reviews { background: var(--green-dark); }
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .review-card {
-      background: var(--green-mid);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
-    .review-stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 10px; }
-    .review-text { font-size: .9rem; color: var(--text-muted); font-style: italic; margin-bottom: 12px; }
-    .review-author { font-size: .85rem; font-weight: 700; }
-
-    /* ===== FAQ ===== */
-    .faq { background: #0f2a0f; }
-    .faq-list { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
-    details {
-      background: var(--green-dark);
-      border-radius: var(--radius);
-      border: 1px solid var(--green-mid);
-      overflow: hidden;
-    }
-    summary {
-      padding: 18px 20px;
-      font-weight: 600;
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    summary::-webkit-details-marker { display: none; }
-    summary::after { content: "+"; font-size: 1.3rem; color: var(--green-wa); transition: transform .3s; }
-    details[open] summary::after { content: "−"; }
-    .faq-answer { padding: 0 20px 18px; color: var(--text-muted); font-size: .92rem; }
-
-    /* ===== FORMULARZ ===== */
-    .contact { background: var(--green-dark); }
-    .contact-wrap {
-      max-width: 560px;
-      margin: 0 auto;
-      background: var(--green-mid);
-      border-radius: var(--radius);
-      padding: 40px 32px;
-      box-shadow: var(--shadow);
-    }
-    .contact-wrap h2 { font-size: 1.4rem; text-align: center; margin-bottom: 28px; }
-    .form-row { display: grid; gap: 16px; margin-bottom: 16px; }
-    .form-row.two { grid-template-columns: 1fr 1fr; }
-    label { display: block; font-size: .85rem; color: var(--text-muted); margin-bottom: 6px; }
-    select, input {
-      width: 100%;
-      padding: 12px 14px;
-      border-radius: 8px;
-      border: 1px solid var(--green-dark);
-      background: var(--green-dark);
-      color: var(--text);
-      font-size: .95rem;
-    }
-    select:focus, input:focus { outline: 2px solid var(--green-wa); }
-    .form-note { font-size: .8rem; color: var(--text-muted); text-align: center; margin-top: 12px; }
-    .btn-full { width: 100%; text-align: center; margin-top: 8px; font-size: 1.05rem; padding: 16px; }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: #080f08;
-      padding: 28px 20px;
-      text-align: center;
-      font-size: .85rem;
-      color: var(--text-muted);
-      border-top: 1px solid var(--green-mid);
-    }
-    footer a { color: var(--green-wa); }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 600px) {
-      .nav-links { display: none; }
-      .form-row.two { grid-template-columns: 1fr; }
-      .contact-wrap { padding: 28px 20px; }
-    }
-  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Jakie jest minimalne zamówienie pelletu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Minimalne zamówienie to zwykle jedna paleta pelletu (około 1 tona). W przypadku dostaw hurtowych minimalny próg wynosi 5 ton na jedno miejsce rozładunku."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ile trwa dostawa pelletu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standardowo od 2 do 5 dni roboczych od potwierdzenia zamówienia. W szczycie sezonu grzewczego zalecamy zamawiać z wyprzedzeniem."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Jakie formy płatności są dostępne?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Możesz zapłacić przelewem, kartą lub online przez PayPal. Przy zamówieniach hurtowych pobieramy zaliczkę w wysokości 20–40% wartości zamówienia."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy pellet jest certyfikowany?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tak – oferujemy wyłącznie pellet drzewny klasy A1, zgodny z normami europejskimi. Charakteryzuje się niską wilgotnością, wysoką kalorycznością i minimalną ilością popiołu."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do jakich województw dostarczacie pellet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Aktualnie obsługujemy województwo mazowieckie i pomorskie. Jeśli nie ma Twojego regionu na liście, napisz do nas – sprawdzimy możliwości dostawy w Twojej okolicy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy mogę zamówić pellet dla firmy lub wspólnoty?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tak – posiadamy specjalną ofertę hurtową dla firm, wspólnot mieszkaniowych, spółdzielni, hoteli i składów opału. Zamówienia od 5 ton, indywidualna wycena i możliwość planowania dostaw na cały sezon."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Jak przebiega zamówienie pelletu krok po kroku?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wystarczy napisać do nas przez WhatsApp lub wypełnić formularz na stronie. Odezwiemy się w ciągu 24 godzin z potwierdzeniem dostępności, ceną i terminem dostawy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czym różni się pellet STANDARD A1 od PREMIUM A1?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oba warianty to pellet klasy A1, jednak PREMIUM A1 wyróżnia się wyższą kalorycznością, śladową ilością popiołu i bardziej jednorodnym składem. STANDARD A1 to świetny wybór dla większości domowych kotłów w dobrej cenie."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
-<body>
-
-<!-- ===== NAV ===== -->
-<nav>
-  <div class="nav-inner">
-    <div class="nav-logo">🌲 Sosnowe Chwile</div>
-    <div class="nav-links">
-      <a href="#oferta">Oferta</a>
-      <a href="#jak-zamowic">Jak zamawiać</a>
-      <a href="#dostawa">Dostawa</a>
-      <a href="#faq">FAQ</a>
-    </div>
-    <a href="https://wa.me/48793573900?text=Chcę+zamówić+pellet" class="btn btn-wa nav-cta" target="_blank">
-      📲 Zamów na WhatsApp
-    </a>
-  </div>
-</nav>
-
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <div class="container">
-    <h1>Pellet <span>A1</span> z dostawą<br>pod Twoje drzwi</h1>
-    <p class="hero-sub">
-      Od 1 790 zł/t &nbsp;·&nbsp; Certyfikat A1 &nbsp;·&nbsp; Dostawa 2–5 dni &nbsp;·&nbsp; Min. 1 tona<br>
-      Obsługujemy <strong>woj. mazowieckie</strong> i <strong>pomorskie</strong>
-    </p>
-    <div class="hero-ctas">
-      <a href="https://wa.me48793573900?text=Chcę+zamówić+pellet" class="btn btn-wa" target="_blank">
-        📲 Zamów przez WhatsApp
-      </a>
-      <a href="#oferta" class="btn btn-outline">Sprawdź cennik ↓</a>
-    </div>
-    <div class="trust-bar">
-      <span>🌲 100% drewno iglaste</span>
-      <span>✅ Certyfikat A1</span>
-      <span>🚚 Dostawa pod dom</span>
-      <span>⭐ Setki zadowolonych klientów</span>
-      <span>📦 Sezon 2025/2026</span>
-    </div>
-  </div>
-</section>
-
-<!-- ===== JAK TO DZIAŁA ===== -->
-<section class="section steps" id="jak-zamowic">
-  <div class="container">
-    <h2 class="section-title">Jak <span>zamówić</span>?</h2>
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-num">1</div>
-        <h3>Wyślij zapytanie</h3>
-        <p>Napisz na WhatsApp lub wypełnij formularz — podaj ilość ton i adres dostawy</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">2</div>
-        <h3>Otrzymujesz wycenę</h3>
-        <p>W ciągu 24h oddzwonimy z ceną, terminem i potwierdzeniem dostępności</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">3</div>
-        <h3>Dowozimy pellet</h3>
-        <p>Po wpłacie zaliczki organizujemy dostawę — 2 do 5 dni roboczych</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CENNIK ===== -->
-<section class="section pricing" id="oferta">
-  <div class="container">
-    <h2 class="section-title">Nasza <span>oferta</span></h2>
-    <div class="pricing-grid">
-
-      <div class="plan">
-        <h3>STANDARD A1</h3>
-        <div class="plan-price">1 790 zł<span>/tona</span></div>
-        <p class="plan-min">min. zamówienie: 1 tona</p>
-        <ul class="plan-features">
-          >Certyfikat A1</li>
-          >Niska wilgotność (&lt;10%)</li>
-          >Drewno iglaste</li>
-          >Dobra kaloryczność</li>
-          >Świetny do codziennego ogrzewania</li>
-        </ul>
-        <a href="https://wa.me/48793573900?text=Zapytanie+STANDARD+A1" class="btn btn-outline" target="_blank">Zapytaj o STANDARD</a>
-      </div>
-
-      <div class="plan featured">
-        <div class="plan-badge">POLECANY</div>
-        <h3>PREMIUM A1</h3>
-        <div class="plan-price">1 990 zł<span>/tona</span></div>
-        <p class="plan-min">min. zamówienie: 1 tona</p>
-        <ul class="plan-features">
-          >Certyfikat A1</li>
-          >Śladowa ilość popiołu (&lt;0,5%)</li>
-          >Wysoka kaloryczność</li>
-          >Idealny do nowoczesnych kotłów</li>
-          >Polecany do kominków i pieców</li>
-        </ul>
-        <a href="https://wa.me/48793573900?text=Zapytanie+PREMIUM+A1" class="btn btn-wa" target="_blank">Zapytaj o PREMIUM</a>
-      </div>
-
-      <div class="plan">
-        <h3>HURT</h3>
-        <div class="plan-price">od 1 690 zł<span>/tona</span></div>
-        <p class="plan-min">min. zamówienie: 5 ton</p>
-        <ul class="plan-features">
-          >Indywidualna wycena</li>
-          >Dla firm i wspólnot</li>
-          >Elastyczny harmonogram dostaw</li>
-          >Faktura VAT</li>
-          >Zaliczka 20–40%</li>
-        </ul>
-        <a href="https://wa.me/48793573900?text=Zapytanie+HURT" class="btn btn-outline" target="_blank">Zapytaj o wycenę hurtową</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== PARAMETRY ===== -->
-<section class="section params">
-  <div class="container">
-    <h2 class="section-title">Parametry <span>pelletu</span></h2>
-    <div class="params-grid">
-      <div class="param-card">
-        <div class="param-icon">🌲</div>
-        <div class="param-label">Typ drewna</div>
-        <div class="param-value">Iglaste</div>
-      </div>
-      <div class="param-card">
-        <div class="param-icon">💧</div>
-        <div class="param-label">Wilgotność</div>
-        <div class="param-value">&lt; 10%</div>
-      </div>
-      <div class="param-card">
-        <div class="param-icon">🌫️</div>
-        <div class="param-label">Zawartość popiołu</div>
-        <div class="param-value">&lt; 0,7%</div>
-      </div>
-      <div class="param-card">
-        <div class="param-icon">🔥</div>
-        <div class="param-label">Kaloryczność</div>
-        <div class="param-value">&ge; 4,6 kWh/kg</div>
-      </div>
-      <div class="param-card">
-        <div class="param-icon">📏</div>
-        <div class="param-label">Średnica</div>
-        <div class="param-value">6 mm</div>
-      </div>
